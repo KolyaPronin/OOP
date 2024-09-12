@@ -1,1 +1,1 @@
-memberSearchIndex = [{"p":"ru.nsu.pronin","c":"Main","l":"Main()","url":"%3Cinit%3E()"},{"p":"ru.nsu.pronin","c":"Main","l":"main(String[])","url":"main(java.lang.String[])"},{"p":"ru.nsu.pronin","c":"Main","l":"sum(int, int)","url":"sum(int,int)"}]
+memberSearchIndex = [{"p":"ru.nsu.pronin","c":"Main.Heap","l":"Heap(int)","url":"%3Cinit%3E(int)"},{"p":"ru.nsu.pronin","c":"Main","l":"Main()","url":"%3Cinit%3E()"},{"p":"ru.nsu.pronin","c":"Main","l":"main(String[])","url":"main(java.lang.String[])"}]
