@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.nsu.pronin.MainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-09-15T11:13:26" hostname="DESKTOP-JGHT4H6" time="0.023">
+  <properties/>
+  <testcase name="test2()" classname="ru.nsu.pronin.MainTest" time="0.023"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
