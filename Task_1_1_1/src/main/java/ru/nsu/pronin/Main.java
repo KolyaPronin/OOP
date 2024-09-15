@@ -14,12 +14,13 @@ public class Main {
             int size;
             int capacity;
             int[] heap;
+
             /**
              * Constructor for creating a heap object with a given capacity.
              *
              * @param capacity the initial capacity of the heap.
              */
-            public Heap(int capacity){
+            public Heap(int capacity) {
                 this.size = 0;
                 this.capacity = capacity;
                 this.heap = new int[capacity];
@@ -31,12 +32,13 @@ public class Main {
          * @param capacity the capacity of the heap to be created.
          * @return the new heap object.
          */
-        static Heap createHeap(int capacity){
+        static Heap createHeap(int capacity) {
             Heap temp = new Heap(capacity);
             temp.size = 0;
             temp.capacity = capacity;
             return temp;
         }
+
         /**
          * Swaps two heap elements.
          *
@@ -44,21 +46,22 @@ public class Main {
          * @param x index of the first element.
          * @param y index of the second element.
          */
-        static void swap(Heap obj,int x,int y){
+        static void swap(Heap obj,int x,int y) {
             int temp = obj.heap[x];
             obj.heap[x] = obj.heap[y];
             obj.heap[y] = temp;
         }
+
         /**
          * Вычисляет индекс родительского элемента для узла кучи.
          *
          * @param v индекс узла.
          * @return индекс родителя.
          */
-        static int parent(int v){
-
+        static int parent(int v) {
             return (v-1)/2;
         }
+
         /**
          * Вычисляет индекс левого потомка узла в куче.
          *
@@ -66,12 +69,12 @@ public class Main {
          * @param v индекс узла.
          * @return индекс левого потомка или -1, если потомок отсутствует.
          */
-        static int left_child(Heap obj, int v){
-
+        static int left_child(Heap obj, int v) {
             if (obj.size < v * 2 + 1)
                 return -1;
             return v*2 +1;
         }
+
         /**
          * Вычисляет индекс правого потомка узла в куче.
          *
@@ -79,11 +82,12 @@ public class Main {
          * @param v индекс узла.
          * @return индекс правого потомка или -1, если потомок отсутствует.
          */
-        static int right_child(Heap obj, int v){
+        static int right_child(Heap obj, int v) {
             if (obj.size < v * 2 + 2)
                 return -1;
             return v * 2 + 2;
         }
+
         /**
          * Поднимает элемент вверх по куче для сохранения свойства минимальной кучи.
          *
@@ -94,11 +98,13 @@ public class Main {
             if (v == 0) {
                 return;
             }
+
             if (obj.heap[v] < obj.heap[parent(v)]) {
                 swap(obj, v, parent(v));
                 siftUp(obj, parent(v));
             }
         }
+
         /**
          * Опускает элемент вниз по куче для сохранения свойства минимальной кучи.
          *
@@ -113,6 +119,7 @@ public class Main {
             if (leftChild != -1 && leftChild < obj.size && obj.heap[leftChild] < obj.heap[min]) {
                 min = leftChild;
             }
+
             if (rightChild != -1 && rightChild < obj.size && obj.heap[rightChild] < obj.heap[min]) {
                 min = rightChild;
             }
@@ -122,7 +129,6 @@ public class Main {
                 siftDown(obj, min);
             }
         }
-
 
         /**
          * Retrieves the minimum element from the heap.
@@ -136,6 +142,7 @@ public class Main {
             siftDown(obj, 0);
             return answer;
         }
+
         /**
          * Adds an element to the heap.
          *
@@ -147,6 +154,7 @@ public class Main {
             obj.size++;
             siftUp(obj, obj.size - 1);
         }
+
         /**
          * Deletes a heap.
          *
@@ -177,6 +185,7 @@ public class Main {
             deleteHeap(tmp);
             return res;
         }
+
         /**
          * The main method of the program.
          * Performs reading an array of numbers, sorting the array and outputting the sorted numbers.
@@ -184,12 +193,10 @@ public class Main {
          * @param args command line arguments (not used).
          */
         public static void main(String[] args) {
-
             Scanner in = new Scanner(System.in);
-
             int N = in.nextInt();
             int[] array = new int[N];
-            for(int i = 0;i<N;i++){
+            for(int i = 0; i < N; i++){
                 array[i] = in.nextInt();
             }
             int[] sortedArray = sortArray(array);

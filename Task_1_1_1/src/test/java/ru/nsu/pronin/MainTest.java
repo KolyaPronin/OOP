@@ -1,8 +1,9 @@
 package ru.nsu.pronin;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 
 class MainTest {
@@ -20,6 +21,7 @@ class MainTest {
         int[] inputArray = {
                 -100, -1231, 38, 103, 16, 1, 55, -6, -232, -99528, 308, 262, 232, 153, 5, -69
         };
+
         int[] expectedArray = {
                 -99528, -1231, -232, -100, -69, -6, 1, 5, 16, 38, 55, 103, 153, 232, 262, 308
         };
