@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import org.junit.jupiter.api.Test;
 
+
+
 class MainTest {
 
     @Test
@@ -14,7 +16,7 @@ class MainTest {
         int[] expectedArray = {
                 2, 5, 10, 46, 47, 69, 87, 106, 183
         };
-        int[] outputArray = Main.sortArray(inputArray);
+        int[] outputArray = HeapSort.sortArray(inputArray);
         assertArrayEquals(expectedArray, outputArray);
     }
 
@@ -26,7 +28,7 @@ class MainTest {
         int[] expectedArray = {
                 -99528, -1231, -232, -100, -69, -6, 1, 5, 16, 38, 55, 103, 153, 308
         };
-        int[] outputArray = Main.sortArray(inputArray);
+        int[] outputArray = HeapSort.sortArray(inputArray);
         assertArrayEquals(expectedArray, outputArray);
     }
 
