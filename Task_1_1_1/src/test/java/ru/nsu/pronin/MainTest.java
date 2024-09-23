@@ -1,15 +1,13 @@
 package ru.nsu.pronin;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-
 import org.junit.jupiter.api.Test;
 
-
+import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
 
     @Test
-    void test1() {
+    void testSmallNumbers() {
         int[] inputArray = {
                 69, 87, 47, 106, 5, 46, 183, 2, 10
         };
@@ -21,7 +19,7 @@ class MainTest {
     }
 
     @Test
-    void test2() {
+    void testLargeNumbers() {
         int[] inputArray = {
                 -100, -1231, 38, 103, 16, 1, 55, -6, -232, -99528, 308, 153, 5, -69
         };
@@ -32,4 +30,9 @@ class MainTest {
         assertArrayEquals(expectedArray, outputArray);
     }
 
+    @Test
+    void testMainClass(){
+        Main.main(null);
+        assertTrue(true);
+    }
 }

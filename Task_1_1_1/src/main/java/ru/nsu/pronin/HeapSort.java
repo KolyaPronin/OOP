@@ -67,7 +67,7 @@ public class HeapSort {
      * @param v node index.
      * @return the index of the left child, or -1 if there is no child.
      */
-    static int left_child(Heap obj, int v) {
+    static int leftChild(Heap obj, int v) {
         if (obj.size < v * 2 + 1) {
             return -1;
         }
@@ -81,7 +81,7 @@ public class HeapSort {
      * @param v node index.
      * @return the index of the right child, or -1 if there is no child.
      */
-    static int right_child(Heap obj, int v) {
+    static int rightChild(Heap obj, int v) {
         if (obj.size < v * 2 + 2) {
             return -1;
         }
@@ -112,8 +112,8 @@ public class HeapSort {
      * @param ind index of the element to omit.
      */
     static void siftDown(Heap obj, int ind) {
-        int leftChild = left_child(obj, ind);
-        int rightChild = right_child(obj, ind);
+        int leftChild = leftChild(obj, ind);
+        int rightChild = rightChild(obj, ind);
         int min = ind;
 
         if (leftChild != -1 && leftChild < obj.size && obj.heap[leftChild] < obj.heap[min]) {
@@ -156,15 +156,6 @@ public class HeapSort {
     }
 
     /**
-     * Deletes a heap.
-     *
-     * @param obj heap object
-     */
-    static void deleteHeap(Heap obj) {
-        obj.heap = null;
-    }
-
-    /**
      * Sorts an array of numbers using a heap data structure.
      *
      * @param numbers an array of numbers to sort
@@ -182,7 +173,6 @@ public class HeapSort {
             res[i] = extractMin(tmp);
         }
 
-        deleteHeap(tmp);
         return res;
     }
 }
