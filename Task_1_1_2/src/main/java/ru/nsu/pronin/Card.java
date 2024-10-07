@@ -50,13 +50,13 @@ public class Card {
             case "Валет":
             case "Дама":
             case "Король":
-                cardDisplayValue = value + " (10)"; // Для картинок (Валет, Дама, Король) значение 10
+                cardDisplayValue = value + " (10)";
                 break;
             case "Туз":
-                cardDisplayValue = value + " (1/11)"; // Для Туза показываем оба возможных значения
+                cardDisplayValue = value + " (1/11)";
                 break;
             default:
-                cardDisplayValue = "(" + value + ")"; // Для числовых карт просто отображаем значение
+                cardDisplayValue = "(" + value + ")";
                 break;
         }
 

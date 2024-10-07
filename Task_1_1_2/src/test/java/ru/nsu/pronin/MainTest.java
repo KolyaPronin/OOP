@@ -57,7 +57,7 @@ class MainTest {
     void testDrawCard() {
         Card card = deck.drawCard();
         assertNotNull(card);
-        assertEquals(51, deck.cards.size()); // After drawing a card, the deck should have 51 cards
+        assertEquals(51, deck.cards.size());
     }
 
     /**
@@ -67,7 +67,7 @@ class MainTest {
     void testAddCardToHand() {
         Card card = new Card("Пики", "10");
         player.addCardToHand(card);  // Uses the Player instance
-        assertEquals(1, player.hand.size()); // Checks if the Player has one card in hand
+        assertEquals(1, player.hand.size());
     }
 
     /**

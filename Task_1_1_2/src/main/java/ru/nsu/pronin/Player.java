@@ -1,7 +1,7 @@
 package ru.nsu.pronin;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Класс Player представляет игрока в игре Блэкджек.
@@ -50,7 +50,7 @@ public class Player {
                     || card.getValue().equals("Король")) {
                 handValue += 10; // Для картинок (Валет, Дама, Король) добавляем 10 очков
             } else {
-                handValue += Integer.parseInt(card.getValue()); // Для числовых карт добавляем их значение
+                handValue += Integer.parseInt(card.getValue());
             }
         }
 

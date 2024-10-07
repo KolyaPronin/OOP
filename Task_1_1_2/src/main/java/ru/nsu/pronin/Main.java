@@ -67,7 +67,8 @@ public class Main {
 
             if (player.hasBusted()) {
                 // Выводим счет и начинаем новый раунд
-                System.out.println("Счет " + playerWins + ":" + dealerWins + " в пользу дилера.");
+                System.out.println("Счет " + playerWins + ":" +
+                        dealerWins + " в пользу дилера.");
                 roundNumber++;
                 continue;
             }
@@ -105,11 +106,14 @@ public class Main {
 
             // Отображаем текущий счет
             if (playerWins > dealerWins) {
-                System.out.println("Счет " + playerWins + ":" + dealerWins + " в вашу пользу.");
+                System.out.println("Счет " + playerWins + ":" +
+                        dealerWins + " в вашу пользу.");
             } else if (dealerWins > playerWins) {
-                System.out.println("Счет " + playerWins + ":" + dealerWins + " в пользу дилера.");
+                System.out.println("Счет " + playerWins + ":" +
+                        dealerWins + " в пользу дилера.");
             } else {
-                System.out.println("Счет " + playerWins + ":" + dealerWins + ". Ничья.");
+                System.out.println("Счет " + playerWins + ":" +
+                        dealerWins + ". Ничья.");
             }
 
             // Спрашиваем, хочет ли игрок продолжить
