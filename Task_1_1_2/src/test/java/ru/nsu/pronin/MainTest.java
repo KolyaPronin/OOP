@@ -110,4 +110,76 @@ class MainTest {
         dealer.addCardToHand(new Card("Бубны", "9"));
         assertEquals(20, dealer.getHandValue());
     }
+
+    /**
+     * test for the case when the deck is empty
+     */
+    @Test
+    void testDrawCardWhenDeckIsEmpty() {
+        for (int i = 0; i < 52; i++) {
+            deck.drawCard(); // Вытаскиваем все карты
+        }
+        assertNull(deck.drawCard()); // Проверяем, что при попытке вытянуть карту из пустой колоды возвращается null
+    }
+
+    /**
+     * test in case the dealer takes several cards
+     */
+    @Test
+    void testDealerAceValueSwitch() {
+        dealer.addCardToHand(new Card("Пики", "Туз"));
+        dealer.addCardToHand(new Card("Червы", "10"));
+        dealer.addCardToHand(new Card("Бубны", "5"));
+        assertEquals(16, dealer.getHandValue());
+    }
+
+    /**
+     * and logic for changing the value of the ace.
+     */
+    @Test
+    void testDealerDrawUntil17() {
+        dealer.addCardToHand(new Card("Пики", "7"));
+        dealer.addCardToHand(new Card("Червы", "9"));
+        assertEquals(16, dealer.getHandValue()); // Проверяем начальное значение
+
+        dealer.addCardToHand(new Card("Бубны", "2"));
+        assertEquals(18, dealer.getHandValue());
+    }
+
+    /**
+     * test for the case when there is an ace in the hand, and its value changes from 11 to 1
+     */
+    @Test
+    void testAceValueSwitch() {
+        player.addCardToHand(new Card("Пики", "Туз"));
+        player.addCardToHand(new Card("Червы", "10"));
+        player.addCardToHand(new Card("Бубны", "2"));
+        assertEquals(13, player.getHandValue());
+    }
+
+    /**
+     * tests that check that all cards are used
+     */
+    @Test
+    void testCardToStringFaceCards() {
+        Card jack = new Card("Пики", "Валет");
+        assertEquals("Пики Валет (10)", jack.toString());
+
+        Card queen = new Card("Червы", "Дама");
+        assertEquals("Червы Дама (10)", queen.toString());
+
+        Card king = new Card("Трефы", "Король");
+        assertEquals("Трефы Король (10)", king.toString());
+    }
+
+    /**
+     * tests that check that all cards are used
+     */
+    @Test
+    void testCardToStringAce() {
+        Card ace = new Card("Бубны", "Туз");
+        assertEquals("Бубны Туз (1/11)", ace.toString());
+    }
+
+
 }
