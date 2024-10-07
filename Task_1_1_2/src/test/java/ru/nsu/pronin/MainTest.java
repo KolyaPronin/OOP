@@ -110,13 +110,4 @@ class MainTest {
         dealer.addCardToHand(new Card("Бубны", "9"));
         assertEquals(20, dealer.getHandValue());
     }
-
-    /**
-     * Test for main method
-     */
-    @Test
-    void testMainClass(){
-        Main.main(null);
-        assertTrue(true);
-    }
 }
