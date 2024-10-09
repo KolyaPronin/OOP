@@ -31,17 +31,12 @@ public class Main {
             Deck deck = new Deck();
             Player player = new Player();
             Dealer dealer = new Dealer();
-
-            deck.shuffleDeck(); // Перемешиваем колоду
-
-            // Раздаем карты игроку и дилеру
-            player.addCardToHand(deck.drawCard());
+            deck.shuffleDeck();                     // Перемешиваем колоду
+            player.addCardToHand(deck.drawCard());  // Раздаем карты игроку и дилеру
             player.addCardToHand(deck.drawCard());
             dealer.addCardToHand(deck.drawCard());
             dealer.addCardToHand(deck.drawCard());
-
-            // Отображаем карты игрока и закрытую карту дилера
-            player.displayHand();
+            player.displayHand();                   // Отображаем карты игрока и закрытую карту дилера
             dealer.displayHand(false);
 
             // Ход игрока
@@ -67,8 +62,8 @@ public class Main {
 
             if (player.hasBusted()) {
                 // Выводим счет и начинаем новый раунд
-                System.out.println("Счет " + playerWins + ":" +
-                        dealerWins + " в пользу дилера.");
+                System.out.println("Счет " + playerWins
+                        + ":" + dealerWins + " в пользу дилера.");
                 roundNumber++;
                 continue;
             }
@@ -106,14 +101,14 @@ public class Main {
 
             // Отображаем текущий счет
             if (playerWins > dealerWins) {
-                System.out.println("Счет " + playerWins + ":" +
-                        dealerWins + " в вашу пользу.");
+                System.out.println("Счет " + playerWins
+                        + ":" + dealerWins + " в вашу пользу.");
             } else if (dealerWins > playerWins) {
-                System.out.println("Счет " + playerWins + ":" +
-                        dealerWins + " в пользу дилера.");
+                System.out.println("Счет " + playerWins
+                        + ":" + dealerWins + " в пользу дилера.");
             } else {
-                System.out.println("Счет " + playerWins + ":" +
-                        dealerWins + ". Ничья.");
+                System.out.println("Счет " + playerWins
+                        + ":" + dealerWins + ". Ничья.");
             }
 
             // Спрашиваем, хочет ли игрок продолжить

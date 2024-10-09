@@ -1,6 +1,7 @@
 package ru.nsu.pronin;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -112,18 +113,18 @@ class MainTest {
     }
 
     /**
-     * test for the case when the deck is empty
+     * Test for the case when the deck is empty.
      */
     @Test
     void testDrawCardWhenDeckIsEmpty() {
         for (int i = 0; i < 52; i++) {
             deck.drawCard(); // Вытаскиваем все карты
-        }
-        assertNull(deck.drawCard()); // Проверяем, что при попытке вытянуть
-    }                                // карту из пустой колоды возвращается null
+        }                             // Проверяем, что при попытке вытянуть
+        assertNull(deck.drawCard());  // карту из пустой колоды возвращается null
+    }
 
     /**
-     * test in case the dealer takes several cards
+     * Test in case the dealer takes several cards.
      */
     @Test
     void testDealerAceValueSwitch() {
@@ -134,7 +135,7 @@ class MainTest {
     }
 
     /**
-     * and logic for changing the value of the ace.
+     * And logic for changing the value of the ace.
      */
     @Test
     void testDealerDrawUntil17() {

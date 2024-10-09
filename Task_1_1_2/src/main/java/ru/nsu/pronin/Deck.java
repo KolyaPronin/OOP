@@ -1,8 +1,8 @@
 package ru.nsu.pronin;
 
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Collections;
 
 /**
  * Класс Deck представляет собой колоду карт для игры в Блэкджек.
