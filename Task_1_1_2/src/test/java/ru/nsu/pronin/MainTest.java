@@ -5,6 +5,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.List;
+
+
 /**
  * Unit tests for the Blackjack game.
  */
@@ -235,5 +240,90 @@ class MainTest {
 
         dealer.addCardToHand(new Card("Бубны", "4"));
         assertEquals(17, dealer.getHandValue());  // Проверяем сумму после добора
+    }
+
+    private static void notRepeatInDeck(List<Card> cards) {
+        for (Card card : cards) {
+            long count = cards.stream().filter(card::equals).count();
+            assertEquals(1, count);
+        }
+    }
+
+    @Test
+    void deckInitializationTest() {
+        Deck deck = new Deck();
+        assertNotNull(deck);
+        notRepeatInDeck(deck.cards);
+        assertEquals(52, deck.cards.size()); // Check if there are 52 cards
+    }
+
+    @Test
+    void dealerHandValueTest() {
+        Dealer dealer = new Dealer();
+        dealer.addCardToHand(new Card("Пики", "Туз")); // Ace
+        dealer.addCardToHand(new Card("Черви", "10")); // Ten
+        assertEquals(21, dealer.getHandValue()); // Dealer's hand value should be 21
+    }
+
+    @Test
+    void playerHandValueWithAcesTest() {
+        Player player = new Player();
+        player.addCardToHand(new Card("Трефы", "Туз")); // Ace
+        player.addCardToHand(new Card("Бубны", "8"));  // Eight
+        assertEquals(19, player.getHandValue()); // Player's hand value should be 19
+    }
+
+    @Test
+    void playerBustedTest() {
+        Player player = new Player();
+        player.addCardToHand(new Card("Черви", "10")); // Ten
+        player.addCardToHand(new Card("Пики", "8"));   // Eight
+        player.addCardToHand(new Card("Бубны", "4"));  // Four
+        assertTrue(player.hasBusted()); // Player should have busted
+    }
+
+    @Test
+    void dealerDrawsTest() {
+        Dealer dealer = new Dealer();
+        Deck deck = new Deck();
+        dealer.addCardToHand(new Card("Пики", "10"));
+        dealer.addCardToHand(new Card("Черви", "6"));
+        assertEquals(16, dealer.getHandValue());
+
+        // Simulate dealer drawing cards
+        dealer.addCardToHand(deck.drawCard()); // Simulate dealer drawing another card
+        assertTrue(dealer.getHandValue() >= 17); // Dealer should stand at 17 or higher
+    }
+
+    @Test
+    void playerInputTest() {
+        String simulatedInput = "1\n0\n1\n0\n0\n"; // Simulate input for player actions
+        InputStream originalIn = System.in;  // Save the original System.in
+
+        try {
+            // Replace System.in with simulated input
+            ByteArrayInputStream in = new ByteArrayInputStream(simulatedInput.getBytes());
+            System.setIn(in);
+            Main.main(new String[0]); // Run the main method to simulate the game
+            // Here you could check the player state or scores if needed
+        } finally {
+            System.setIn(originalIn); // Restore original System.in
+        }
+    }
+
+    @Test
+    void fullGameTest() {
+        String simulatedInput = "1\n1\n0\n0\n"; // Simulate full game input
+        InputStream originalIn = System.in;
+
+        try {
+            // Replace System.in with simulated input
+            ByteArrayInputStream in = new ByteArrayInputStream(simulatedInput.getBytes());
+            System.setIn(in);
+            Main.main(new String[0]); // Run the main method to simulate the game
+            // Check final scores or other game outcomes if needed
+        } finally {
+            System.setIn(originalIn); // Restore original System.in
+        }
     }
 }
