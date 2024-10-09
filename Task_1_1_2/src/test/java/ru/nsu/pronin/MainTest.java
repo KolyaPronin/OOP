@@ -5,9 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-
 /**
  * Unit tests for the Blackjack game.
  */
@@ -239,5 +236,4 @@ class MainTest {
         dealer.addCardToHand(new Card("Бубны", "4"));
         assertEquals(17, dealer.getHandValue());  // Проверяем сумму после добора
     }
-
 }
