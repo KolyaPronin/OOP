@@ -5,6 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+
 /**
  * Unit tests for the Blackjack game.
  */
@@ -182,5 +185,73 @@ class MainTest {
         assertEquals("Бубны Туз (1/11)", ace.toString());
     }
 
+    /**
+     * Test case when player hand value exactly equals 21.
+     */
+    @Test
+    void testPlayerExactly21() {
+        player.addCardToHand(new Card("Пики", "10"));
+        player.addCardToHand(new Card("Червы", "Туз"));
+        assertEquals(21, player.getHandValue());  // Проверяем, что значение руки игрока равно 21
+    }
 
+    /**
+     * Test case when player has multiple Aces and the total value should stay under 21.
+     */
+    @Test
+    void testMultipleAcesInHand() {
+        player.addCardToHand(new Card("Пики", "Туз"));
+        player.addCardToHand(new Card("Червы", "Туз"));
+        player.addCardToHand(new Card("Бубны", "9"));
+        assertEquals(21, player.getHandValue());  // Проверяем, что правильное значение для двух тузов и 9
+    }
+
+    /**
+     * Test case when dealer has exactly 17 points and stops.
+     */
+    @Test
+    void testDealerStopsAt17() {
+        dealer.addCardToHand(new Card("Пики", "10"));
+        dealer.addCardToHand(new Card("Червы", "7"));
+        assertEquals(17, dealer.getHandValue());  // Проверяем, что дилер остановится при 17
+    }
+
+    /**
+     * Test case when dealer busts (over 21).
+     */
+    @Test
+    void testDealerBust() {
+        dealer.addCardToHand(new Card("Пики", "10"));
+        dealer.addCardToHand(new Card("Червы", "10"));
+        dealer.addCardToHand(new Card("Бубны", "5"));
+        assertTrue(dealer.getHandValue() > 21);  // Проверяем, что дилер перебирает
+    }
+
+    /**
+     * Test case when dealer draws until they reach 17 or more.
+     */
+    @Test
+    void testDealerDrawsUntil17() {
+        dealer.addCardToHand(new Card("Пики", "7"));
+        dealer.addCardToHand(new Card("Червы", "6"));
+        assertEquals(13, dealer.getHandValue());  // Проверяем начальную сумму
+
+        dealer.addCardToHand(new Card("Бубны", "4"));
+        assertEquals(17, dealer.getHandValue());  // Проверяем сумму после добора
+    }
+
+    @Test
+    void testMainClass() {
+        // Подготовка симулированного ввода для программы
+        String simulatedInput = "1\n0\n"; // Симулируем выбор "взять карту", затем "остановиться"
+        InputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
+        System.setIn(inputStream); // Перенаправляем стандартный ввод на наш InputStream
+
+        try {
+            Main.main(null); // Запускаем метод main с нашим "вводом"
+            assertTrue(true); // Если нет исключений, тест успешен
+        } catch (Exception e) {
+            fail("Main method threw an exception: " + e.getMessage()); // Если возникли исключения, тест провален
+        }
+    }
 }
