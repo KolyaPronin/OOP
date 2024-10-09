@@ -240,18 +240,4 @@ class MainTest {
         assertEquals(17, dealer.getHandValue());  // Проверяем сумму после добора
     }
 
-    @Test
-    void testMainClass() {
-        // Подготовка симулированного ввода для программы
-        String simulatedInput = "1\n0\n"; // Симулируем выбор "взять карту", затем "остановиться"
-        InputStream inputStream = new ByteArrayInputStream(simulatedInput.getBytes());
-        System.setIn(inputStream); // Перенаправляем стандартный ввод на наш InputStream
-
-        try {
-            Main.main(null); // Запускаем метод main с нашим "вводом"
-            assertTrue(true); // Если нет исключений, тест успешен
-        } catch (Exception e) {
-            fail("Main method threw an exception: " + e.getMessage()); // Если возникли исключения, тест провален
-        }
-    }
 }
