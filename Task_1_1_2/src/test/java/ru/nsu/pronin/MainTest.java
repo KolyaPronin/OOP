@@ -1,7 +1,5 @@
 package ru.nsu.pronin;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,6 +7,10 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Unit tests for the Blackjack game.
@@ -205,7 +207,7 @@ class MainTest {
         player.addCardToHand(new Card("Пики", "Туз"));
         player.addCardToHand(new Card("Червы", "Туз"));
         player.addCardToHand(new Card("Бубны", "9"));
-        assertEquals(21, player.getHandValue());  // Проверяем, что правильное значение для двух тузов и 9
+        assertEquals(21, player.getHandValue());
     }
 
     /**
@@ -255,7 +257,8 @@ class MainTest {
     }
 
     /**
-     * Tests the initialization of the deck to ensure it is not null and contains 52 unique cards.
+     * Tests the initialization of the deck
+     * to ensure it is not null and contains 52 unique cards.
      */
     @Test
     void deckInitializationTest() {
@@ -266,7 +269,8 @@ class MainTest {
     }
 
     /**
-     * Tests the value of the dealer's hand to ensure it calculates correctly to 21 with an Ace and a Ten.
+     * Tests the value of the dealer's hand to
+     * ensure it calculates correctly to 21 with an Ace and a Ten.
      */
     @Test
     void dealerHandValueTest() {
@@ -277,7 +281,8 @@ class MainTest {
     }
 
     /**
-     * Tests the value of the player's hand with an Ace and an Eight to ensure it calculates correctly to 19.
+     * Tests the value of the player's hand with
+     * an Ace and an Eight to ensure it calculates correctly to 19.
      */
     @Test
     void playerHandValueWithAcesTest() {
