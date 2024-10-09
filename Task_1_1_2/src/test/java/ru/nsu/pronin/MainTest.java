@@ -242,6 +242,11 @@ class MainTest {
         assertEquals(17, dealer.getHandValue());  // Проверяем сумму после добора
     }
 
+    /**
+     * Checks that no card is repeated in the given deck of cards.
+     *
+     * @param cards the list of cards to check for duplicates
+     */
     private static void notRepeatInDeck(List<Card> cards) {
         for (Card card : cards) {
             long count = cards.stream().filter(card::equals).count();
@@ -249,6 +254,9 @@ class MainTest {
         }
     }
 
+    /**
+     * Tests the initialization of the deck to ensure it is not null and contains 52 unique cards.
+     */
     @Test
     void deckInitializationTest() {
         Deck deck = new Deck();
@@ -257,6 +265,9 @@ class MainTest {
         assertEquals(52, deck.cards.size()); // Check if there are 52 cards
     }
 
+    /**
+     * Tests the value of the dealer's hand to ensure it calculates correctly to 21 with an Ace and a Ten.
+     */
     @Test
     void dealerHandValueTest() {
         Dealer dealer = new Dealer();
@@ -265,6 +276,9 @@ class MainTest {
         assertEquals(21, dealer.getHandValue()); // Dealer's hand value should be 21
     }
 
+    /**
+     * Tests the value of the player's hand with an Ace and an Eight to ensure it calculates correctly to 19.
+     */
     @Test
     void playerHandValueWithAcesTest() {
         Player player = new Player();
@@ -273,6 +287,9 @@ class MainTest {
         assertEquals(19, player.getHandValue()); // Player's hand value should be 19
     }
 
+    /**
+     * Tests whether the player has busted (exceeded a hand value of 21).
+     */
     @Test
     void playerBustedTest() {
         Player player = new Player();
@@ -282,6 +299,9 @@ class MainTest {
         assertTrue(player.hasBusted()); // Player should have busted
     }
 
+    /**
+     * Tests the dealer's drawing mechanism, ensuring that the dealer stands at 17 or higher.
+     */
     @Test
     void dealerDrawsTest() {
         Dealer dealer = new Dealer();
@@ -295,6 +315,9 @@ class MainTest {
         assertTrue(dealer.getHandValue() >= 17); // Dealer should stand at 17 or higher
     }
 
+    /**
+     * Tests player input handling by simulating user actions during the game.
+     */
     @Test
     void playerInputTest() {
         String simulatedInput = "1\n0\n1\n0\n0\n"; // Simulate input for player actions
@@ -311,6 +334,9 @@ class MainTest {
         }
     }
 
+    /**
+     * Tests a full game simulation by simulating a predefined series of player actions.
+     */
     @Test
     void fullGameTest() {
         String simulatedInput = "1\n1\n0\n0\n"; // Simulate full game input
