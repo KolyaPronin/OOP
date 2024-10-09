@@ -1,8 +1,8 @@
 package ru.nsu.pronin;
 
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit tests for the Blackjack game.
@@ -119,8 +119,8 @@ class MainTest {
         for (int i = 0; i < 52; i++) {
             deck.drawCard(); // Вытаскиваем все карты
         }
-        assertNull(deck.drawCard()); // Проверяем, что при попытке вытянуть карту из пустой колоды возвращается null
-    }
+        assertNull(deck.drawCard()); // Проверяем, что при попытке вытянуть
+    }                                // карту из пустой колоды возвращается null
 
     /**
      * test in case the dealer takes several cards
@@ -147,7 +147,7 @@ class MainTest {
     }
 
     /**
-     * test for the case when there is an ace in the hand, and its value changes from 11 to 1
+     * Test for the case when there is an ace in the hand, and its value changes from 11 to 1.
      */
     @Test
     void testAceValueSwitch() {
@@ -158,7 +158,7 @@ class MainTest {
     }
 
     /**
-     * tests that check that all cards are used
+     * Tests that check that all cards are used.
      */
     @Test
     void testCardToStringFaceCards() {
@@ -173,7 +173,7 @@ class MainTest {
     }
 
     /**
-     * tests that check that all cards are used
+     * Tests that check that all cards are used.
      */
     @Test
     void testCardToStringAce() {
