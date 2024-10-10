@@ -1,7 +1,7 @@
 package ru.nsu.pronin;
 
-import java.util.Collections;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -29,8 +29,9 @@ public class Deck {
      */
     private void initializeDeck() {
         String[] suits = {"Пики", "Червы", "Бубны", "Трефы"};
-        String[] values = {"2", "3", "4", "5", "6", "7", "8", "9", "10",
-                "Валет", "Дама", "Король", "Туз"};
+        String[] values = {
+                "2", "3", "4", "5", "6", "7", "8", "9", "10", "Валет", "Дама", "Король", "Туз"
+        };
 
         for (String suit : suits) {
             for (String value : values) {

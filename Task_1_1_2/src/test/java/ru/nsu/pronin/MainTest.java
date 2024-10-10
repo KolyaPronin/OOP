@@ -3,7 +3,6 @@ package ru.nsu.pronin;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +15,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Unit tests for the Blackjack game.
  */
 class MainTest {
-
     private Deck deck;
     private Player player;
     private Dealer dealer;
