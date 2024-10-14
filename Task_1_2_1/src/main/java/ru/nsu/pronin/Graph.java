@@ -1,87 +1,87 @@
 package ru.nsu.pronin;
 
-import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 /**
- * Interface for implementing an undirected graph, without multiple edges.
+ * Интерфейс для представления графа.
+ * Граф может быть реализован различными способами, например, с использованием списка смежности
+ * или матрицы смежности.
  */
 public interface Graph {
-    /**
-     * Adds a new vertex.
-     *
-     * @param vertex - new vertex.
-     */
-    void addVertex(int vertex);
 
     /**
-     * Removes a vertex.
+     * Добавляет вершину в граф.
      *
-     * @param vertex - vertex number.
+     * @param vertex Вершина для добавления в граф.
      */
-    void deleteVertex(int vertex);
+    void addVertex(Vertex vertex);
 
     /**
-     * Adds an edge.
+     * Удаляет вершину из графа.
      *
-     * @param from - where from.
-     * @param to - where.
+     * @param vertex Вершина для удаления из графа.
      */
-    void addEdge(int from, int to);
+    void removeVertex(Vertex vertex);
 
     /**
-     *Deletes an edge.
+     * Добавляет ребро между двумя вершинами.
      *
-     * @param from - where from.
-     * @param to - where.
+     * @param from Начальная вершина (источник).
+     * @param to Конечная вершина (назначение).
      */
-    void deleteEdge(int from, int to);
+    void addEdge(Vertex from, Vertex to);
 
     /**
-     * Returns a list of neighbors.
+     * Удаляет ребро между двумя вершинами.
      *
-     * @param vertex - vertex number.
-     * @return - neighbors of this vertex.
+     * @param from Начальная вершина (источник).
+     * @param to Конечная вершина (назначение).
      */
-    List<Integer> getNeighbors(int vertex);
+    void removeEdge(Vertex from, Vertex to);
 
     /**
-     * Returns all edges.
+     * Получает список соседей заданной вершины.
      *
-     * @return - all edges as a hash map.
+     * @param vertex Вершина, для которой требуется получить список соседей.
+     * @return Список соседей вершины.
      */
-    Map<Integer, List<Integer>> allEdges();
+    List<Vertex> getNeighbors(Vertex vertex);
 
     /**
-     * Reads a graph from a file.
-     * ver1 ver2 - then this is an edge.
-     * ver1 is the top.
+     * Выполняет топологическую сортировку графа.
+     * Алгоритм топологической сортировки упорядочивает вершины графа в такой последовательности,
+     * что для любого ребра (u → v) вершина u будет стоять перед вершиной v в отсортированном списке.
+     * Если граф содержит цикл, метод может вернуть пустой список.
      *
-     * @param filename - file name.
-     * @throws IOException - returns an exception.
+     * @return Список вершин в топологическом порядке.
      */
-    void readFromFile(String filename) throws IOException;
+    List<Vertex> topologicalSort();
 
     /**
-     * Converts a graph to a string.
+     * Читает граф из файла.
+     * Формат файла должен быть следующим:
+     * - Сначала количество вершин (N).
+     * - Далее имена вершин, по одному на строку.
+     * - После этого следует список рёбер, каждое ребро представлено двумя индексами вершин.
      *
-     * @return the string.
+     * @param filename Имя файла для чтения.
      */
-    String toString();
+    void readFromFile(String filename);
 
     /**
-     * Compares two graphs.
+     * Сравнивает текущий граф с другим объектом.
+     * Графы считаются равными, если у них одинаковые вершины и рёбра.
      *
-     * @param obj what to compare with.
-     * @return true/false.
+     * @param obj Объект для сравнения с текущим графом.
+     * @return true, если графы одинаковы, иначе false.
      */
     boolean equals(Object obj);
 
     /**
-     * Topological sorting.
+     * Получает строковое представление графа.
+     * Строка будет содержать информацию о вершинах графа и рёбрах, их соединяющих.
      *
-     * @return a list of sorted vertices.
+     * @return Строковое представление графа.
      */
-    List<Integer> topologicalSort();
+    String toString();
 }
