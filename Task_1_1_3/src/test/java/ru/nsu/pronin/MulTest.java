@@ -1,11 +1,11 @@
 package ru.nsu.pronin;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Unit test for the Mul class.
- * <p>
  * This test verifies the correct behavior of the Mul operation,
  * including its print, derivative, and eval methods.
  */

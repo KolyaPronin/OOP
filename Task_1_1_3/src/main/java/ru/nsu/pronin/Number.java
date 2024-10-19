@@ -2,12 +2,14 @@ package ru.nsu.pronin;
 
 /**
  * The {@code Number} class represents a constant numerical value in an expression.
- * It provides methods for printing the number, calculating its derivative, and evaluating it.
+ * It provides methods for printing the number,
+ * calculating its derivative, and evaluating it.
  *
  * <p>This class extends the {@link Expression} class, and overrides its methods
  * to handle constant numbers.</p>
  *
- * <p>For example, if the value of the number is 5, this class will represent the constant expression {@code 5}.</p>
+ * <p>For example, if the value of the number is 5,
+ * this class will represent the constant expression {@code 5}.</p>
  */
 class Number extends Expression {
 
@@ -38,7 +40,8 @@ class Number extends Expression {
     /**
      * Calculates the derivative of a constant number, which is always zero.
      *
-     * @param var the variable with respect to which the derivative is taken (not relevant for constants)
+     * @param var the variable with respect to which the
+     *           derivative is taken (not relevant for constants)
      * @return a new {@link Number} object representing the value 0
      */
     @Override

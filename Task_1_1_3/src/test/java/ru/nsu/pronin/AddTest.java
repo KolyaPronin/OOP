@@ -1,11 +1,11 @@
 package ru.nsu.pronin;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Unit test for the Add class.
- * <p>
  * This test verifies the correct behavior of the Add operation,
  * including its print, derivative, and eval methods.
  */

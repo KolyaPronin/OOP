@@ -1,8 +1,10 @@
 package ru.nsu.pronin;
 
 /**
- * The {@code Div} class represents a division operation between two {@link Expression} objects.
- * It provides methods for printing the expression, calculating its derivative with respect to a variable,
+ * The {@code Div} class represents a division operation
+ * between two {@link Expression} objects.
+ * It provides methods for printing the expression,
+ * calculating its derivative with respect to a variable,
  * and evaluating the expression given specific variable values.
  *
  * <p>For example, given two expressions {@code left} and {@code right}, this class will compute
@@ -35,7 +37,8 @@ class Div extends Expression {
     }
 
     /**
-     * Returns a string representation of the division expression in the form "(left / right)".
+     * Returns a string representation of the
+     * division expression in the form "(left / right)".
      *
      * @return a string representation of the expression
      */
@@ -45,9 +48,11 @@ class Div extends Expression {
     }
 
     /**
-     * Calculates the derivative of the division expression with respect to the specified variable.
+     * Calculates the derivative of the division
+     * expression with respect to the specified variable.
      *
-     * <p>It applies the quotient rule: (f / g)' = (f' * g - f * g') / g^2, where {@code f} and {@code g} are the
+     * <p>It applies the quotient rule:
+     * (f / g)' = (f' * g - f * g') / g^2, where {@code f} and {@code g} are the
      * left and right expressions, respectively.</p>
      *
      * @param var the variable with respect to which the derivative is taken
@@ -66,12 +71,15 @@ class Div extends Expression {
     }
 
     /**
-     * Evaluates the division expression by computing the result of {@code left / right}.
+     * Evaluates the division expression by
+     * computing the result of {@code left / right}.
      *
-     * <p>First, both operands are evaluated, and the division is performed. If the denominator evaluates to zero,
+     * <p>First, both operands are evaluated,
+     * and the division is performed. If the denominator evaluates to zero,
      * an {@link ArithmeticException} is thrown.</p>
      *
-     * @param variables a string representing the values of the variables (implementation-specific)
+     * @param variables a string representing the values
+     *                 of the variables (implementation-specific)
      * @return the result of the division
      * @throws ArithmeticException if the denominator evaluates to zero
      */

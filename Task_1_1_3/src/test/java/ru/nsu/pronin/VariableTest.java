@@ -1,11 +1,12 @@
 package ru.nsu.pronin;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Unit test for the Variable class.
- * <p>
  * This test verifies the correct behavior of the Variable operation,
  * including its print, derivative, and eval methods.
  */

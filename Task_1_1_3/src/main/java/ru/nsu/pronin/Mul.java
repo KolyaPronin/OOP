@@ -1,8 +1,10 @@
 package ru.nsu.pronin;
 
 /**
- * The {@code Mul} class represents a multiplication operation between two {@link Expression} objects.
- * It provides methods for printing the expression, calculating its derivative with respect to a variable,
+ * The {@code Mul} class represents a multiplication
+ * operation between two {@link Expression} objects.
+ * It provides methods for printing the expression,
+ * calculating its derivative with respect to a variable,
  * and evaluating the expression given specific variable values.
  *
  * <p>For example, given two expressions {@code left} and {@code right}, this class will compute
@@ -35,7 +37,8 @@ class Mul extends Expression {
     }
 
     /**
-     * Returns a string representation of the multiplication expression in the form "(left * right)".
+     * Returns a string representation of the multiplication
+     * expression in the form "(left * right)".
      *
      * @return a string representation of the expression
      */
@@ -45,13 +48,16 @@ class Mul extends Expression {
     }
 
     /**
-     * Calculates the derivative of the multiplication expression with respect to the specified variable.
+     * Calculates the derivative of the multiplication expression
+     * with respect to the specified variable.
      *
-     * <p>It applies the product rule: (f * g)' = f' * g + f * g', where {@code f} and {@code g} are the
+     * <p>It applies the product rule: (f * g)' = f' * g + f * g',
+     * where {@code f} and {@code g} are the
      * left and right expressions, respectively.</p>
      *
      * @param var the variable with respect to which the derivative is taken
-     * @return a new {@link Add} object representing the derivative of the multiplication
+     * @return a new {@link Add} object representing
+     * the derivative of the multiplication
      */
     @Override
     public Expression derivative(String var) {
@@ -63,11 +69,13 @@ class Mul extends Expression {
     }
 
     /**
-     * Evaluates the multiplication expression by computing the product of {@code left * right}.
+     * Evaluates the multiplication expression by
+     * computing the product of {@code left * right}.
      *
      * <p>Each operand is evaluated first, and then their product is returned.</p>
      *
-     * @param variables a string representing the values of the variables (implementation-specific)
+     * @param variables a string representing the
+     *                 values of the variables (implementation-specific)
      * @return the result of the multiplication
      */
     @Override

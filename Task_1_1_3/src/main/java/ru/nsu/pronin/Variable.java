@@ -4,12 +4,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * The {@code Variable} class represents a variable in an expression. It supports methods to print the variable name,
- * calculate its derivative with respect to a given variable, and evaluate its value from a string of variable assignments.
+ * The {@code Variable} class represents a variable in an expression.
+ * It supports methods to print the variable name,
+ * calculate its derivative with respect to a given variable,
+ * and evaluate its value from a string of variable assignments.
  *
- * <p>This class extends the {@link Expression} class, and overrides its methods to provide functionality for handling variables.</p>
+ * <p>This class extends the {@link Expression} class, and
+ * overrides its methods to provide functionality for handling variables.</p>
  *
- * <p>For example, if the variable is {@code x}, the class will be able to return its value from a set of variable assignments
+ * <p>For example, if the variable is {@code x}, the class will be able
+ * to return its value from a set of variable assignments
  * such as {@code "x=10; y=5"}.</p>
  */
 class Variable extends Expression {
@@ -57,10 +61,13 @@ class Variable extends Expression {
     }
 
     /**
-     * Evaluates the variable by extracting its value from a given string of variable assignments.
+     * Evaluates the variable by extracting its
+     * value from a given string of variable assignments.
      *
-     * <p>The input string should be in the format "x=10; y=5", where the variable names are separated by semicolons,
-     * and the values are assigned using the "=" sign. The method will throw a {@link RuntimeException} if the variable
+     * <p>The input string should be in the format "x=10; y=5",
+     * where the variable names are separated by semicolons,
+     * and the values are assigned using the "=" sign.
+     * The method will throw a {@link RuntimeException} if the variable
      * is not found in the input string.</p>
      *
      * @param variables a string representing the variable assignments (e.g., "x=10; y=5")
@@ -81,9 +88,11 @@ class Variable extends Expression {
     }
 
     /**
-     * Parses a string of variable assignments and returns a map of variable names and their corresponding values.
+     * Parses a string of variable assignments and returns a map of
+     * variable names and their corresponding values.
      *
-     * <p>The input string should be in the format "x=10; y=5". If the string is not properly formatted,
+     * <p>The input string should be in the format "x=10; y=5".
+     * If the string is not properly formatted,
      * a {@link RuntimeException} will be thrown.</p>
      *
      * @param variables a string representing the variable assignments

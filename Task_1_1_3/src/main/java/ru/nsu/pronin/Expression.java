@@ -1,14 +1,20 @@
 package ru.nsu.pronin;
 
 /**
- * The {@code Expression} class serves as an abstract base class for all mathematical expressions.
- * It defines the common interface that all specific expression types must implement, such as printing the expression,
- * calculating its derivative with respect to a variable, and evaluating the expression.
+ * The {@code Expression} class serves as an
+ * abstract base class for all mathematical expressions.
+ * It defines the common interface that all
+ * specific expression types must implement, such as printing the expression,
+ * calculating its derivative with respect
+ * to a variable, and evaluating the expression.
  *
- * <p>Classes that extend {@code Expression} must provide concrete implementations for these methods.</p>
+ * <p>Classes that extend {@code Expression} must
+ * provide concrete implementations for these methods.</p>
  *
- * <p>Examples of subclasses include {@link Add} (for addition), {@link Sub} (for subtraction),
- * {@link Mul} (for multiplication), {@link Div} (for division), {@link Variable} (for variables),
+ * <p>Examples of subclasses include {@link Add}
+ * (for addition), {@link Sub} (for subtraction),
+ * {@link Mul} (for multiplication), {@link Div}
+ * (for division), {@link Variable} (for variables),
  * and {@link Number} (for constants).</p>
  *
  * @author Pronin
@@ -29,7 +35,8 @@ public abstract class Expression {
     /**
      * Calculates the derivative of the expression with respect to the given variable.
      *
-     * <p>Subclasses must implement this method to return the derivative of the specific expression.
+     * <p>Subclasses must implement this method to return
+     * the derivative of the specific expression.
      * For example, for a constant number, the derivative is zero, while for a variable,
      * the derivative with respect to itself is one.</p>
      *

@@ -1,11 +1,12 @@
 package ru.nsu.pronin;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Unit test for the Div class.
- * <p>
  * This test verifies the correct behavior of the Div operation,
  * including its print, derivative, and eval methods.
  */
