@@ -1,1 +1,1 @@
-typeSearchIndex = [{"p":"ru.nsu.pronin","l":"adjacencyList"},{"p":"ru.nsu.pronin","l":"adjacencyMatrix"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.pronin","l":"Graph"},{"p":"ru.nsu.pronin","l":"incidenceMatrix"}]
+typeSearchIndex = [{"p":"ru.nsu.pronin","l":"AdjacencyList"},{"p":"ru.nsu.pronin","l":"AdjacencyMatrix"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.pronin","l":"Graph"},{"p":"ru.nsu.pronin","l":"IncidenceMatrix"}]
