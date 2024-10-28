@@ -5,83 +5,83 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Интерфейс для реализации неориентированного графа, без кратных ребер.
+ * Interface for implementing an undirected graph, without multiple edges.
  */
 public interface Graph {
     /**
-     * Добавляет новую вершину.
+     * Adds a new vertex.
      *
-     * @param vertex - новая вершина.
+     * @param vertex - new vertex.
      */
     void addVertex(int vertex);
 
     /**
-     * Удаляет вершину.
+     * Removes a vertex.
      *
-     * @param vertex - номер вершины.
+     * @param vertex - vertex number.
      */
     void deleteVertex(int vertex);
 
     /**
-     * Добавляет ребро.
+     * Adds an edge.
      *
-     * @param from - откуда.
-     * @param to   - куда.
+     * @param from - where from.
+     * @param to - where.
      */
     void addEdge(int from, int to);
 
     /**
-     * Удаляет ребро.
+     *Deletes an edge.
      *
-     * @param from - откуда.
-     * @param to   - куда.
+     * @param from - where from.
+     * @param to - where.
      */
     void deleteEdge(int from, int to);
 
     /**
-     * Возвращает список соседей.
+     * Returns a list of neighbors.
      *
-     * @param vertex - номер вершины.
-     * @return - соседи этой вершины.
+     * @param vertex - vertex number.
+     * @return - neighbors of this vertex.
      */
     List<Integer> getNeighbors(int vertex);
 
     /**
-     * Возвращает все ребра.
+     * Returns all edges.
      *
-     * @return - все ребра в виде хэш мапа.
+     * @return - all edges as a hash map.
      */
     Map<Integer, List<Integer>> allEdges();
 
     /**
-     * Читает граф из файла.
-     * ver1 ver2 - то это ребро.
-     * ver1 - это вершина.
+     * Reads a graph from a file.
+     * ver1 ver2 - then this is an edge.
+     * ver1 is the top.
      *
-     * @param filename - имя файла.
-     * @throws IOException - возвращает исключение.
+     * @param filename - file name.
+     * @throws IOException - returns an exception.
      */
     void readFromFile(String filename) throws IOException;
 
     /**
-     * Превращает граф в строку.
+     * Converts a graph to a string.
      *
-     * @return строку.
+     * @return the string.
      */
     String toString();
 
     /**
-     * Сравнивает два графа.
+     * Compares two graphs.
      *
-     * @param obj с чем сравниваем.
+     * @param obj what to compare with.
      * @return true/false.
      */
     boolean equals(Object obj);
 
     /**
-     * Топологическая сортировка.
+     * Topological sorting.
      *
-     * @return список отсортированных вершин.
+     * @return a list of sorted vertices.
      */
     List<Integer> topologicalSort();
 }
