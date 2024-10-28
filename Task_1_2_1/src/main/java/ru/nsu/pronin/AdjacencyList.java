@@ -8,14 +8,14 @@ import java.util.*;
 /**
  * Implementation of a graph using an adjacency list.
  */
-public class adjacencyList implements Graph {
+public class AdjacencyList implements Graph {
 
     private Map<Integer, List<Integer>> adjList;
 
     /**
      * Constructor.
      */
-    public adjacencyList() {
+    public AdjacencyList() {
         adjList = new HashMap<>();
     }
 

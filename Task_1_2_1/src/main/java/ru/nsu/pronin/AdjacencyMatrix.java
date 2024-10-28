@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * Implementation of a graph using an Adjacency Matrix.
  */
-public class adjacencyMatrix implements Graph {
+public class AdjacencyMatrix implements Graph {
     int[][] adjMtx;
     int vertexCount;
 
@@ -17,7 +17,7 @@ public class adjacencyMatrix implements Graph {
      *
      * @param size number of vertices.
      */
-    public adjacencyMatrix(int size) {
+    public AdjacencyMatrix(int size) {
         if (size < 1) {
             throw new IllegalArgumentException("Неправильное значение size");
         }

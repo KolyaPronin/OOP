@@ -11,11 +11,11 @@ import org.junit.jupiter.api.Test;
 
 class AdjacencyListTest {
 
-    static adjacencyList graph = new adjacencyList();
+    static AdjacencyList graph = new AdjacencyList();
 
     @BeforeEach
     void setUp() {
-        graph = new adjacencyList();
+        graph = new AdjacencyList();
         graph.addVertex(1);
         graph.addVertex(2);
         graph.addVertex(3);
@@ -118,7 +118,7 @@ class AdjacencyListTest {
 
     @Test
     void testEqualsWithNewAdjList() {
-        adjacencyList newGraph = new adjacencyList();
+        AdjacencyList newGraph = new AdjacencyList();
         newGraph.addVertex(1);
         newGraph.addVertex(2);
         newGraph.addVertex(3);
@@ -138,7 +138,7 @@ class AdjacencyListTest {
 
     @Test
     void testEqualsWithAdjMatrixTrue() {
-        adjacencyMatrix adjMatrix = new adjacencyMatrix(3);
+        AdjacencyMatrix adjMatrix = new AdjacencyMatrix(3);
         adjMatrix.addVertex(1);
         adjMatrix.addVertex(2);
         adjMatrix.addVertex(3);
@@ -151,7 +151,7 @@ class AdjacencyListTest {
 
     @Test
     void testEqualsWithAdjMatrixFalse() {
-        adjacencyMatrix adjMatrix = new adjacencyMatrix(3);
+        AdjacencyMatrix adjMatrix = new AdjacencyMatrix(3);
         adjMatrix.addVertex(1);
         adjMatrix.addVertex(2);
         adjMatrix.addVertex(3);
@@ -165,7 +165,7 @@ class AdjacencyListTest {
 
     @Test
     void testEqualsWithIncMatrixTrue() {
-        incidenceMatrix incMatrix = new incidenceMatrix(3);
+        IncidenceMatrix incMatrix = new IncidenceMatrix(3);
         incMatrix.addVertex(1);
         incMatrix.addVertex(2);
         incMatrix.addVertex(3);
@@ -178,7 +178,7 @@ class AdjacencyListTest {
 
     @Test
     void testEqualsWithIncMatrixFalse() {
-        incidenceMatrix incMatrix = new incidenceMatrix(3);
+        IncidenceMatrix incMatrix = new IncidenceMatrix(3);
         incMatrix.addVertex(1);
         incMatrix.addVertex(2);
         incMatrix.addVertex(3);
@@ -219,7 +219,7 @@ class AdjacencyListTest {
 
     @Test
     void testReadFromFile() throws IOException {
-        graph = new adjacencyList();
+        graph = new AdjacencyList();
         graph.readFromFile("src/test/java/ru/nsu/pronin/testGraph.txt");
 
         assertEquals(graph.toString(), "{1=[], 2=[3], 3=[], 4=[1]}");

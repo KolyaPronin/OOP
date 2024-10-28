@@ -10,11 +10,11 @@ import org.junit.jupiter.api.Test;
 
 class AdjacencyMatrixTest {
 
-    adjacencyMatrix matrix = new adjacencyMatrix(3);
+    AdjacencyMatrix matrix = new AdjacencyMatrix(3);
 
     @Test
     void constructorValidation() {
-        assertThrows(IllegalArgumentException.class, () -> new adjacencyMatrix(0));
+        assertThrows(IllegalArgumentException.class, () -> new AdjacencyMatrix(0));
     }
 
     @Test
@@ -112,7 +112,7 @@ class AdjacencyMatrixTest {
 
     @Test
     void equalityWithNewMatrix() {
-        adjacencyMatrix newMatrix = new adjacencyMatrix(3);
+        AdjacencyMatrix newMatrix = new AdjacencyMatrix(3);
         newMatrix.addVertex(1);
         newMatrix.addVertex(2);
         newMatrix.addVertex(3);
@@ -131,7 +131,7 @@ class AdjacencyMatrixTest {
 
     @Test
     void equalityWithAdjList() {
-        adjacencyList adjList = new adjacencyList();
+        AdjacencyList adjList = new AdjacencyList();
         adjList.addVertex(1);
         adjList.addVertex(2);
         adjList.addVertex(3);
@@ -144,7 +144,7 @@ class AdjacencyMatrixTest {
 
     @Test
     void inequalityWithModifiedAdjList() {
-        adjacencyList adjList = new adjacencyList();
+        AdjacencyList adjList = new AdjacencyList();
         adjList.addVertex(1);
         adjList.addVertex(2);
         adjList.addVertex(3);
@@ -158,7 +158,7 @@ class AdjacencyMatrixTest {
 
     @Test
     void equalityWithIncidenceMatrix() {
-        incidenceMatrix incMatrix = new incidenceMatrix(3);
+        IncidenceMatrix incMatrix = new IncidenceMatrix(3);
         incMatrix.addVertex(1);
         incMatrix.addVertex(2);
         incMatrix.addVertex(3);
@@ -171,7 +171,7 @@ class AdjacencyMatrixTest {
 
     @Test
     void inequalityWithModifiedIncidenceMatrix() {
-        incidenceMatrix incMatrix = new incidenceMatrix(3);
+        IncidenceMatrix incMatrix = new IncidenceMatrix(3);
         incMatrix.addVertex(1);
         incMatrix.addVertex(2);
         incMatrix.addVertex(3);
@@ -211,7 +211,7 @@ class AdjacencyMatrixTest {
 
     @Test
     void testFileRead() throws IOException {
-        matrix = new adjacencyMatrix(1);
+        matrix = new AdjacencyMatrix(1);
         matrix.readFromFile("src/test/java/ru/nsu/pronin/testGraph.txt");
 
         assertEquals(matrix.toString(), "{1=[], 2=[3], 3=[], 4=[1]}");

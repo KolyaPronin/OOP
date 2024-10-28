@@ -10,11 +10,11 @@ import org.junit.jupiter.api.Test;
 
 class IncidenceMatrixTest {
 
-    incidenceMatrix graphMatrix = new incidenceMatrix(3);
+    IncidenceMatrix graphMatrix = new IncidenceMatrix(3);
 
     @Test
     void validateConstructor() {
-        assertThrows(IllegalArgumentException.class, () -> new adjacencyMatrix(0));
+        assertThrows(IllegalArgumentException.class, () -> new AdjacencyMatrix(0));
     }
 
     @Test
@@ -116,7 +116,7 @@ class IncidenceMatrixTest {
 
     @Test
     void equalityWithNewIncMatrix() {
-        incidenceMatrix newMatrix = new incidenceMatrix(3);
+        IncidenceMatrix newMatrix = new IncidenceMatrix(3);
         newMatrix.addVertex(1);
         newMatrix.addVertex(2);
         newMatrix.addVertex(3);
@@ -134,7 +134,7 @@ class IncidenceMatrixTest {
 
     @Test
     void equalityWithAdjListTrue() {
-        adjacencyList adjList = new adjacencyList();
+        AdjacencyList adjList = new AdjacencyList();
         adjList.addVertex(1);
         adjList.addVertex(2);
         adjList.addVertex(3);
@@ -146,7 +146,7 @@ class IncidenceMatrixTest {
 
     @Test
     void inequalityWithModifiedAdjList() {
-        adjacencyList adjList = new adjacencyList();
+        AdjacencyList adjList = new AdjacencyList();
         adjList.addVertex(1);
         adjList.addVertex(2);
         adjList.addVertex(3);
@@ -159,7 +159,7 @@ class IncidenceMatrixTest {
 
     @Test
     void equalityWithAdjacencyMatrixTrue() {
-        adjacencyMatrix adjMatrix = new adjacencyMatrix(3);
+        AdjacencyMatrix adjMatrix = new AdjacencyMatrix(3);
         adjMatrix.addVertex(1);
         adjMatrix.addVertex(2);
         adjMatrix.addVertex(3);
@@ -171,7 +171,7 @@ class IncidenceMatrixTest {
 
     @Test
     void inequalityWithDifferentAdjMatrix() {
-        adjacencyMatrix adjMatrix = new adjacencyMatrix(3);
+        AdjacencyMatrix adjMatrix = new AdjacencyMatrix(3);
         adjMatrix.addVertex(1);
         adjMatrix.addVertex(2);
         adjMatrix.addVertex(3);
@@ -211,7 +211,7 @@ class IncidenceMatrixTest {
 
     @Test
     void fileReadingTest() throws IOException {
-        graphMatrix = new incidenceMatrix(1);
+        graphMatrix = new IncidenceMatrix(1);
         graphMatrix.readFromFile("src/test/java/ru/nsu/pronin/testGraph.txt");
 
         assertEquals(graphMatrix.toString(), "{1=[], 2=[3], 3=[], 4=[1]}");

@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * Implementation of a graph using an Incidence Matrix.
  */
-public class incidenceMatrix implements Graph {
+public class IncidenceMatrix implements Graph {
     int[][] incMtx;
     private int verCount;
     private int edgeCount;
@@ -19,7 +19,7 @@ public class incidenceMatrix implements Graph {
      *
      * @param newVerCount - number of vertices.
      */
-    public incidenceMatrix(int newVerCount) {
+    public IncidenceMatrix(int newVerCount) {
         if (newVerCount <= 0) {
             throw new IllegalArgumentException("Некорректное количество вершин.");
         }
