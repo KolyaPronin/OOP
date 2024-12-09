@@ -1,6 +1,6 @@
 package ru.nsu.pronin;
 
-public class GoidaFunction {
+public class ZFunction {
 
     int[] Zfunk(String array){
         char[] charArray = array.toCharArray();

@@ -8,7 +8,7 @@ public class FindSubString {
 
         ArrayList<Integer> answer = new ArrayList<>();
 
-        GoidaFunction exempl = new GoidaFunction();
+        ZFunction exempl = new ZFunction();
         String finalStr =  SubStr + '#' + Str;
         int[] Zarray = exempl.Zfunk(finalStr);
 
