@@ -2,24 +2,50 @@ package ru.nsu.pronin;
 
 import java.util.ArrayList;
 
+/**
+ * Класс для нахождения всех вхождений подстроки в строку с использованием Z-функции.
+ * Метод `Find` находит все вхождения подстроки в строке, возвращая их индексы.
+ */
 public class FindSubString {
 
-    public ArrayList<Integer> Find(String Str, String SubStr){
+    /**
+     * Находит все вхождения подстроки в строку и возвращает их индексы.
+     * <p>
+     * Для поиска используется алгоритм Z-функции. Результатом работы метода является список индексов,
+     * на которых начинается вхождение подстроки в строке.
+     * </p>
+     *
+     * @param Str строка, в которой нужно найти подстроку
+     * @param SubStr подстрока, которую нужно найти в строке
+     * @return список индексов, на которых начинается вхождение подстроки в строку
+     */
+    public ArrayList<Integer> Find(String Str, String SubStr) {
 
+        // Список для хранения индексов вхождений
         ArrayList<Integer> answer = new ArrayList<>();
 
+        // Создаем объект ZFunction для вычисления Z-функции
         ZFunction exempl = new ZFunction();
-        String finalStr =  SubStr + '#' + Str;
+
+        // Строка, которая состоит из подстроки, разделенной символом '#', и основной строки
+        String finalStr = SubStr + '#' + Str;
+
+        // Вычисляем Z-функцию для объединенной строки
         int[] Zarray = exempl.Zfunk(finalStr);
 
+        // Длина подстроки
         int lenSubStr = SubStr.length();
 
-        for (int i = lenSubStr + 1;i < Zarray.length; i++){
+        // Ищем все вхождения подстроки в строке, анализируя Z-массив
+        for (int i = lenSubStr + 1; i < Zarray.length; i++) {
+            // Если Z-функция равна длине подстроки, это означает, что подстрока найдена
             if (Zarray[i] == lenSubStr) {
-                answer.add(i - (lenSubStr) - 1);
+                // Добавляем индекс вхождения в список
+                answer.add(i - lenSubStr - 1);
             }
         }
 
+        // Возвращаем список индексов
         return answer;
     }
 }

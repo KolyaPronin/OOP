@@ -1,45 +1,66 @@
 package ru.nsu.pronin;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.io.*;
 import java.util.Scanner;
 
-
+/**
+ * Главный класс программы, который выполняет поиск всех вхождений подстроки
+ * в большом текстовом файле и выводит абсолютные позиции этих вхождений.
+ * <p>
+ * Программа генерирует текстовый файл с помощью {@link CreatLargeFile}, а затем
+ * ищет все вхождения подстроки в файле. Абсолютные индексы каждого вхождения
+ * выводятся на экран.
+ * </p>
+ */
 public class Main {
+
+    /**
+     * Главный метод программы.
+     * <p>
+     * Программа читает строку из стандартного ввода и генерирует файл с случайными
+     * UUID с помощью {@link CreatLargeFile}. Затем для каждой строки файла
+     * ищет вхождения подстроки и выводит их абсолютные позиции.
+     * </p>
+     *
+     * @param args параметры командной строки (не используются)
+     */
     public static void main(String[] args) {
 
-
+        // Создание сканнера для ввода подстроки
         Scanner scan = new Scanner(System.in);
 
+        // Ввод подстроки для поиска
         String subString = scan.nextLine();
-//        File TextFile = new File("C:/Users/kolya/OneDrive/Рабочий стол" +
-//                "/папки/уроки/НГУ УЧЕБА/2курс/JuniorJavaJeveloper" +
-//                " (JJJ)/git/OOP/Task_1_3_1/TextFile.txt") ;
 
-        File TextFile = new CreatLargeFile().generate();
+        // Генерация большого текстового файла
+        File textFile = new CreatLargeFile().generate();
 
-        var filePosition = 0;
-        try(BufferedReader br = new BufferedReader (new FileReader(TextFile))) {
-            String s;
-            while((s=br.readLine()) != null){
+        int filePosition = 0;
 
+        // Чтение файла построчно
+        try (BufferedReader br = new BufferedReader(new FileReader(textFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                // Создание экземпляра класса FindSubString для поиска подстроки
                 FindSubString exemplar = new FindSubString();
-                ArrayList<Integer> arr = exemplar.Find(s, subString);
+                ArrayList<Integer> positions = exemplar.Find(line, subString);
 
-                for (int index : arr) {
+                // Вывод абсолютных позиций каждого вхождения
+                for (int index : positions) {
                     int absoluteIndex = filePosition + index;
                     System.out.print(absoluteIndex + " ");
                 }
-                filePosition += s.length() + 1;
-            }
-        }
-        catch(IOException ex){
 
+                // Обновляем filePosition для следующей строки
+                filePosition += line.length() + 1;
+            }
+        } catch (IOException ex) {
+            // Обработка исключений при чтении файла
             System.out.println(ex.getMessage());
         }
-
-
     }
 }
