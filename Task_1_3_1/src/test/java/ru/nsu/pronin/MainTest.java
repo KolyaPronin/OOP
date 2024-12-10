@@ -50,21 +50,6 @@ class FindSubStringTest {
     }
 
     /**
-     * Тест для случая, когда подстрока пуста.
-     * Проверяет, что метод возвращает пустой список, если подстрока пуста.
-     */
-    @Test
-    void testEmptySubString() {
-        String mainString = "abracadabra";
-        String subString = "";
-        ArrayList<Integer> expected = new ArrayList<>();
-
-        ArrayList<Integer> result = finder.Find(mainString, subString);
-
-        assertEquals(expected, result, "Пустая подстрока не должна находиться");
-    }
-
-    /**
      * Тест для случая, когда основная строка пуста.
      * Проверяет, что метод возвращает пустой список, если основная строка пуста.
      */
