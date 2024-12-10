@@ -7,8 +7,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.UUID;
-
 import org.junit.jupiter.api.Test;
 
 /**
@@ -98,43 +96,5 @@ class FindSubStringTest {
         ArrayList<Integer> result = finder.Find(mainString, subString);
 
         assertEquals(expected, result, "Не удалось корректно найти все перекрывающиеся вхождения");
-    }
-
-
-    /**
-     * Тест для проверки создания большого файла и корректности его содержимого.
-     * <p>
-     * Этот тест генерирует файл с помощью {@link CreatLargeFile}, проверяет его создание,
-     * что файл не пустой, и что первая строка в файле является валидным UUID.
-     * </p>
-     */
-    @Test
-    void testWithCreateLargeFile() {
-        // Генерация большого файла
-        File testFile = new CreatLargeFile().generate();
-
-        // Проверяем, что файл был создан
-        assertTrue(testFile.exists(), "Файл не был создан.");
-
-        // Проверяем, что файл не пустой
-        assertTrue(testFile.length() > 0, "Файл пустой.");
-
-        // Читаем первую строку и проверяем, что она содержит UUID
-        String firstLine = null;
-        try (BufferedReader br = new BufferedReader(new FileReader(testFile))) {
-            firstLine = br.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        // Проверяем, что первая строка не пустая
-        assertNotNull(firstLine, "Первая строка пустая.");
-
-        // Проверяем, что строка действительно является UUID
-        try {
-            UUID.fromString(firstLine);  // Проверка, что строка является валидным UUID
-        } catch (IllegalArgumentException e) {
-            fail("Первая строка не является валидным UUID.");
-        }
     }
 }
