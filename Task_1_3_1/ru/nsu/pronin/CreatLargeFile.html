@@ -90,7 +90,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CreatLargeFile</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Класс для создания большого текстового файла с случайными UUID.
+<div class="block">Класс для создания большого текстового файла со случайными UUID.
  Метод `generate` создает файл с заданным количеством строк, каждая из которых содержит случайный UUID.</div>
 </section>
 <section class="summary">
@@ -122,18 +122,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generate()" class="member-name-link">generate</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Генерирует файл с случайными UUID.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareData(int)" class="member-name-link">prepareData</a><wbr>(int&nbsp;lineCount)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Подготавливает данные для записи в файл.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeFileNio(java.io.File,java.lang.String)" class="member-name-link">writeFileNio</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;f,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;content)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Записывает данные в файл с использованием NIO.</div>
+<div class="block">Генерирует файл со случайными UUID.</div>
 </div>
 </div>
 </div>
@@ -170,7 +159,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="generate()">
 <h3>generate</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></span>&nbsp;<span class="element-name">generate</span>()</div>
-<div class="block">Генерирует файл с случайными UUID.
+<div class="block">Генерирует файл со случайными UUID.
  <p>
  Метод создает файл с указанным путем и заполняет его строками, состоящими из случайных UUID.
  Количество строк в файле определяется параметром.
@@ -178,40 +167,6 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>объект <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link"><code>File</code></a>, который представляет созданный файл</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="prepareData(int)">
-<h3>prepareData</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">prepareData</span><wbr><span class="parameters">(int&nbsp;lineCount)</span></div>
-<div class="block">Подготавливает данные для записи в файл.
- <p>
- Метод генерирует строки, содержащие случайные UUID, и возвращает строку, содержащую
- указанное количество строк с UUID.
- </p></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>lineCount</code> - количество строк, которые необходимо сгенерировать</dd>
-<dt>Returns:</dt>
-<dd>строка, содержащая сгенерированные данные для записи в файл</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="writeFileNio(java.io.File,java.lang.String)">
-<h3>writeFileNio</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">writeFileNio</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;f,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;content)</span></div>
-<div class="block">Записывает данные в файл с использованием NIO.
- <p>
- Этот метод использует NIO для записи данных в файл. В случае ошибки выбрасывается
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link"><code>RuntimeException</code></a>.
- </p></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>f</code> - файл, в который нужно записать данные</dd>
-<dd><code>content</code> - строка, содержащая данные для записи в файл</dd>
 </dl>
 </section>
 </li>
