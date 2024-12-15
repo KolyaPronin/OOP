@@ -11,7 +11,7 @@ import java.util.UUID;
  * Метод `generate` создает файл с заданным количеством строк,
  * каждая из которых содержит случайный UUID.
  */
-public class CreatLargeFile {
+public class LargeFileCreator {
 
     /**
      * Генерирует файл со случайными UUID.
@@ -23,14 +23,10 @@ public class CreatLargeFile {
      *
      * @return объект {@link File}, который представляет созданный файл
      */
-    public File generate() {
+    public File generate(File f) {
         // Генерация данных для записи в файл
         var data = prepareData(5_000_000);
 
-        // Создание файла в указанной директории
-        File f = new File("C:/Users/kolya/OneDrive/Рабочий стол"
-                + "/папки/уроки/НГУ УЧЕБА/2курс/JuniorJavaJeveloper"
-                + " (JJJ)/git/OOP/Task_1_3_1/TextFile.txt");
 
         // Запись данных в файл
         writeFileNio(f, data);
