@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.pronin","l":"CreatLargeFile"},{"p":"ru.nsu.pronin","l":"Main"},{"p":"ru.nsu.pronin","l":"SubstringFinder"},{"p":"ru.nsu.pronin","l":"Zfunction"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.pronin","l":"LargeFileCreator"},{"p":"ru.nsu.pronin","l":"Main"},{"p":"ru.nsu.pronin","l":"SubstringFinder"},{"p":"ru.nsu.pronin","l":"Zfunction"}];updateSearchResults();
