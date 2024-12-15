@@ -8,7 +8,7 @@ package ru.nsu.pronin;
  * начинающимся с позиции i.
  * </p>
  */
-public class ZFunction {
+public class Zfunction {
 
     /**
      * Вычисляет Z-функцию для переданной строки.

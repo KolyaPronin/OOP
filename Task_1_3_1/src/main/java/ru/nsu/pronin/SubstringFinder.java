@@ -11,7 +11,8 @@ public class SubstringFinder {
     /**
      * Находит все вхождения подстроки в строку и возвращает их индексы.
      * <p>
-     * Для поиска используется алгоритм Z-функции. Результатом работы метода является список индексов,
+     * Для поиска используется алгоритм Z-функции.
+     * Результатом работы метода является список индексов,
      * на которых начинается вхождение подстроки в строке.
      * </p>
      *
@@ -25,21 +26,21 @@ public class SubstringFinder {
         ArrayList<Integer> answer = new ArrayList<>();
 
         // Создаем объект ZFunction для вычисления Z-функции
-        ZFunction exempl = new ZFunction();
+        Zfunction exempl = new Zfunction();
 
         // Строка, которая состоит из подстроки, разделенной символом '#', и основной строки
         String finalStr = subStr + '#' + str;
 
         // Вычисляем Z-функцию для объединенной строки
-        int[] zArray = exempl.zFunk(finalStr);
+        int[] zarray = exempl.zFunk(finalStr);
 
         // Длина подстроки
         int lenSubStr = subStr.length();
 
         // Ищем все вхождения подстроки в строке, анализируя Z-массив
-        for (int i = lenSubStr + 1; i < zArray.length; i++) {
+        for (int i = lenSubStr + 1; i < zarray.length; i++) {
             // Если Z-функция равна длине подстроки, это означает, что подстрока найдена
-            if (zArray[i] == lenSubStr) {
+            if (zarray[i] == lenSubStr) {
                 // Добавляем индекс вхождения в список
                 answer.add(i - lenSubStr - 1);
             }
