@@ -23,30 +23,30 @@ public class ZFunction {
      * @return массив Z-функции, где каждый элемент представляет длину максимального
      *         префикса, совпадающего с суффиксом начиная с индекса i
      */
-    public int[] Zfunk(String array) {
+    public int[] zFunk(String array) {
         // Преобразуем строку в массив символов
         char[] charArray = array.toCharArray();
         int len = charArray.length;
-        int[] Zarray = new int[len];
+        int[] zArray = new int[len];
 
         // Алгоритм для вычисления Z-функции
         for (int i = 1, l = 0, r = 0; i < len; i++) {
             if (i <= r) {
                 // Если i в пределах правого интервала, используем предыдущие вычисления
-                Zarray[i] = Math.min(r - i + 1, Zarray[i - l]);
+                zArray[i] = Math.min(r - i + 1, zArray[i - l]);
             }
             // Пробегаем по строке, расширяя текущий префикс
-            while (i + Zarray[i] < len && charArray[Zarray[i]] == charArray[i + Zarray[i]]) {
-                Zarray[i]++;
+            while (i + zArray[i] < len && charArray[zArray[i]] == charArray[i + zArray[i]]) {
+                zArray[i]++;
             }
 
             // Если нашли более длинный суффикс, обновляем границы интервала
-            if (i + Zarray[i] - 1 > r) {
-                r = i + Zarray[i] - 1;
+            if (i + zArray[i] - 1 > r) {
+                r = i + zArray[i] - 1;
                 l = i;
             }
         }
 
-        return Zarray;
+        return zArray;
     }
 }

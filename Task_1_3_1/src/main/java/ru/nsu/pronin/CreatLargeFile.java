@@ -7,13 +7,13 @@ import java.nio.file.StandardOpenOption;
 import java.util.UUID;
 
 /**
- * Класс для создания большого текстового файла с случайными UUID.
+ * Класс для создания большого текстового файла со случайными UUID.
  * Метод `generate` создает файл с заданным количеством строк, каждая из которых содержит случайный UUID.
  */
 public class CreatLargeFile {
 
     /**
-     * Генерирует файл с случайными UUID.
+     * Генерирует файл со случайными UUID.
      * <p>
      * Метод создает файл с указанным путем и заполняет его строками, состоящими из случайных UUID.
      * Количество строк в файле определяется параметром.
@@ -47,7 +47,7 @@ public class CreatLargeFile {
      * @param lineCount количество строк, которые необходимо сгенерировать
      * @return строка, содержащая сгенерированные данные для записи в файл
      */
-    public String prepareData(int lineCount) {
+    private String prepareData(int lineCount) {
         // Строка, в которую будут записываться данные
         var data = new StringBuilder();
 
@@ -70,7 +70,7 @@ public class CreatLargeFile {
      * @param f файл, в который нужно записать данные
      * @param content строка, содержащая данные для записи в файл
      */
-    public void writeFileNio(File f, String content) {
+    private void writeFileNio(File f, String content) {
         try {
             // Запись данных в файл
             Files.writeString(Paths.get(f.toURI()), content, StandardOpenOption.CREATE);

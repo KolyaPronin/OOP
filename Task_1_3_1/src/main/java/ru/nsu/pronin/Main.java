@@ -46,8 +46,8 @@ public class Main {
             String line;
             while ((line = br.readLine()) != null) {
                 // Создание экземпляра класса FindSubString для поиска подстроки
-                FindSubString exemplar = new FindSubString();
-                ArrayList<Integer> positions = exemplar.Find(line, subString);
+                SubstringFinder exemplar = new SubstringFinder();
+                ArrayList<Integer> positions = exemplar.find(line, subString);
 
                 // Вывод абсолютных позиций каждого вхождения
                 for (int index : positions) {

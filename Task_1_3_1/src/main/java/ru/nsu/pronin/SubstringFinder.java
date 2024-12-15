@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Класс для нахождения всех вхождений подстроки в строку с использованием Z-функции.
  * Метод `Find` находит все вхождения подстроки в строке, возвращая их индексы.
  */
-public class FindSubString {
+public class SubstringFinder {
 
     /**
      * Находит все вхождения подстроки в строку и возвращает их индексы.
@@ -15,11 +15,11 @@ public class FindSubString {
      * на которых начинается вхождение подстроки в строке.
      * </p>
      *
-     * @param Str строка, в которой нужно найти подстроку
-     * @param SubStr подстрока, которую нужно найти в строке
+     * @param str строка, в которой нужно найти подстроку
+     * @param subStr подстрока, которую нужно найти в строке
      * @return список индексов, на которых начинается вхождение подстроки в строку
      */
-    public ArrayList<Integer> Find(String Str, String SubStr) {
+    public ArrayList<Integer> find(String str, String subStr) {
 
         // Список для хранения индексов вхождений
         ArrayList<Integer> answer = new ArrayList<>();
@@ -28,18 +28,18 @@ public class FindSubString {
         ZFunction exempl = new ZFunction();
 
         // Строка, которая состоит из подстроки, разделенной символом '#', и основной строки
-        String finalStr = SubStr + '#' + Str;
+        String finalStr = subStr + '#' + str;
 
         // Вычисляем Z-функцию для объединенной строки
-        int[] Zarray = exempl.Zfunk(finalStr);
+        int[] zArray = exempl.zFunk(finalStr);
 
         // Длина подстроки
-        int lenSubStr = SubStr.length();
+        int lenSubStr = subStr.length();
 
         // Ищем все вхождения подстроки в строке, анализируя Z-массив
-        for (int i = lenSubStr + 1; i < Zarray.length; i++) {
+        for (int i = lenSubStr + 1; i < zArray.length; i++) {
             // Если Z-функция равна длине подстроки, это означает, что подстрока найдена
-            if (Zarray[i] == lenSubStr) {
+            if (zArray[i] == lenSubStr) {
                 // Добавляем индекс вхождения в список
                 answer.add(i - lenSubStr - 1);
             }

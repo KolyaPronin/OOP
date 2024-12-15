@@ -2,10 +2,6 @@ package ru.nsu.pronin;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +11,7 @@ import org.junit.jupiter.api.Test;
  */
 class FindSubStringTest {
 
-    private final FindSubString finder = new FindSubString();
+    private final SubstringFinder finder = new SubstringFinder();
 
     /**
      * Тест для случая, когда подстрока найдена ровно один раз.
@@ -29,7 +25,7 @@ class FindSubStringTest {
         expected.add(1); // Первое вхождение "bra" начинается с индекса 1
         expected.add(8); // Второе вхождение "bra" начинается с индекса 8
 
-        ArrayList<Integer> result = finder.Find(mainString, subString);
+        ArrayList<Integer> result = finder.find(mainString, subString);
 
         assertEquals(expected, result, "Не удалось найти все вхождения подстроки");
     }
@@ -44,7 +40,7 @@ class FindSubStringTest {
         String subString = "xyz";
         ArrayList<Integer> expected = new ArrayList<>();
 
-        ArrayList<Integer> result = finder.Find(mainString, subString);
+        ArrayList<Integer> result = finder.find(mainString, subString);
 
         assertEquals(expected, result, "Подстрока, которой нет, не должна быть найдена");
     }
@@ -59,7 +55,7 @@ class FindSubStringTest {
         String subString = "abc";
         ArrayList<Integer> expected = new ArrayList<>();
 
-        ArrayList<Integer> result = finder.Find(mainString, subString);
+        ArrayList<Integer> result = finder.find(mainString, subString);
 
         assertEquals(expected, result, "В пустой строке не должно быть вхождений");
     }
@@ -74,7 +70,7 @@ class FindSubStringTest {
         String subString = "";
         ArrayList<Integer> expected = new ArrayList<>();
 
-        ArrayList<Integer> result = finder.Find(mainString, subString);
+        ArrayList<Integer> result = finder.find(mainString, subString);
 
         assertEquals(expected, result, "Две пустые строки не должны давать вхождений");
     }
@@ -93,7 +89,7 @@ class FindSubStringTest {
         expected.add(2); // Вхождение 3
         expected.add(3); // Вхождение 4
 
-        ArrayList<Integer> result = finder.Find(mainString, subString);
+        ArrayList<Integer> result = finder.find(mainString, subString);
 
         assertEquals(expected, result, "Не удалось корректно найти все перекрывающиеся вхождения");
     }
