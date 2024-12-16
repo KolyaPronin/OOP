@@ -26,22 +26,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.FindSubStringTest.executor": "Run",
-    "Gradle.FindSubStringTest.testMain.executor": "Run",
-    "Gradle.FindSubStringTest.testMainClass.executor": "Run",
-    "Gradle.FindSubStringTest.testSubStringFoundOnce.executor": "Run",
-    "Gradle.FindSubStringTest.testWithCreateLargeFile.executor": "Run",
-    "Gradle.Task_1_3_1 [:ru.nsu.pronin.Main.main()].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Task__1__2__2",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/kolya/oop/OOP/Task_1_2_1"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.FindSubStringTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FindSubStringTest.testMain.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FindSubStringTest.testMainClass.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FindSubStringTest.testSubStringFoundOnce.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FindSubStringTest.testWithCreateLargeFile.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Task_1_3_1 [:ru.nsu.pronin.Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Task__1__2__2&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kolya/oop/OOP/Task_1_2_1&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Gradle.FindSubStringTest">
     <configuration name="FindSubStringTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />

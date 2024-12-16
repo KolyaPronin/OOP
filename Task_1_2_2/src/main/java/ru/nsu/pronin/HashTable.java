@@ -1,8 +1,6 @@
 package ru.nsu.pronin;
 
 import java.util.*;
-
-
 /**
  * Реализация хэш таблицы.
  *
