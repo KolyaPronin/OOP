@@ -19,7 +19,7 @@ class MainTest {
     @Test
     void smallArrayFirstTestFirstMethod() {
         ArrayList<ArrayList<Integer>> smallArray = new GenerateArraysForTests()
-                .generateArrays(1, 10, 1.0);
+                .generateArrays(1, 10, 1);
         boolean answer = new SingleThreadCompositeChecker()
                 .simpleNumber(smallArray.get(0));
         boolean expectedAnswer = true;
@@ -58,7 +58,7 @@ class MainTest {
     @Test
     void middleArraySecondTestFirstMethod() {
         ArrayList<ArrayList<Integer>> middleArray = new GenerateArraysForTests()
-                .generateArrays(1, 100, 1.0);
+                .generateArrays(1, 100, 1);
         boolean answer = new SingleThreadCompositeChecker()
                 .simpleNumber(middleArray.get(0));
         boolean expectedAnswer = true;
