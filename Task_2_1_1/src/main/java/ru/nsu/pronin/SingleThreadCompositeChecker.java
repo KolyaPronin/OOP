@@ -29,13 +29,17 @@ public class SingleThreadCompositeChecker {
      * @return {@code true}, если число составное, иначе {@code false}.
      */
     public boolean isComposite(int num) {
-        if (num <= 1) return false;
+        if (num <= 1) {
+            return false;
+        }
 
         // Генерация простых чисел до квадратного корня из num
         ArrayList<Integer> primes = new PrimeNumberGenerator().simpleNums((int) Math.sqrt(num));
 
         for (int prime : primes) {
-            if (prime * prime > num) break;
+            if (prime * prime > num) {
+                break;
+            }
             if (num % prime == 0) {
                 return true; // Нашли делитель - число составное
             }

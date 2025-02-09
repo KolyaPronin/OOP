@@ -17,8 +17,8 @@ public class Main {
         int arrayCount = scanner.nextInt();
         int arraySize = 1000;
         double compositeProbability = 1;
-        ArrayList<ArrayList<Integer>> testArrays = new GenerateArraysForTests().
-                generateArrays(arrayCount,arraySize,compositeProbability);
+        ArrayList<ArrayList<Integer>> testArrays = new GenerateArraysForTests()
+                .generateArrays(arrayCount,arraySize,compositeProbability);
         // Последовательный метод
         double startTimeMethod1 = System.currentTimeMillis();
         boolean answer = new SingleThreadCompositeChecker().simpleNumber(testArrays.get(0));
@@ -30,15 +30,15 @@ public class Main {
         int numThreads = scanner.nextInt();
         double startTimeMethod2 = System.currentTimeMillis();
         ParallelCompositeChecker parallelDecision = new ParallelCompositeChecker();
-        boolean hasComposite = parallelDecision.
-                parallelHasComposite(testArrays.get(1), numThreads);
+        boolean hasComposite = parallelDecision
+                .parallelHasComposite(testArrays.get(1), numThreads);
         System.out.println("Threads: " + hasComposite);
         double endTimeMethod2 = System.currentTimeMillis();
         System.out.printf("%.5f%n", (endTimeMethod2 - startTimeMethod2) / 1000.0);
         // Параллельный метод с использованием ParallelStream
         double startTimeMethod3 = System.currentTimeMillis();
-        boolean answer1 = new ParallelStreamCompositeChecker().
-                parallelStreamCompositeChecker(testArrays.get(2));
+        boolean answer1 = new ParallelStreamCompositeChecker()
+                .parallelStreamCompositeChecker(testArrays.get(2));
         System.out.println("parallel stream:" + answer1);
         double endTimeMethod3 = System.currentTimeMillis();
         System.out.printf("%.5f%n", (endTimeMethod3 - startTimeMethod3) / 1000.0);

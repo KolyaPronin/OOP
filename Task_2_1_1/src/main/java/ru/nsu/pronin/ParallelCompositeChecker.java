@@ -47,7 +47,9 @@ public class ParallelCompositeChecker {
         @Override
         public void run() {
             for (int num : subList) {
-                if (hasComposite.get()) return;
+                if (hasComposite.get()) {
+                    return;
+                }
                 if (new SingleThreadCompositeChecker().isComposite(num)) {
                     hasComposite.set(true);
                     return;
