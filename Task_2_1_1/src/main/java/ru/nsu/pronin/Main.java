@@ -7,10 +7,10 @@ import java.util.Scanner;
  * Главный класс для запуска программы.
  */
 public class Main {
-    /**
-     * @param args аргументы командной строки (не используются)
-     * @throws InterruptedException если выполнение потоков прерывается
-     */
+ /**
+ * @param args аргументы командной строки (не используются)
+ * @throws InterruptedException если выполнение потоков прерывается
+ */
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Введите число массивов: ");
         Scanner scanner = new Scanner(System.in);
@@ -18,7 +18,7 @@ public class Main {
         int arraySize = 1000;
         double compositeProbability = 1;
         ArrayList<ArrayList<Integer>> testArrays = new GenerateArraysForTests()
-                .generateArrays(arrayCount,arraySize,compositeProbability);
+                .generateArrays(arrayCount, arraySize, compositeProbability);
         // Последовательный метод
         double startTimeMethod1 = System.currentTimeMillis();
         boolean answer = new SingleThreadCompositeChecker().simpleNumber(testArrays.get(0));
