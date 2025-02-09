@@ -17,7 +17,8 @@ public class GenerateArraysForTests {
      *
      * @return список из arrayCount массивов случайных чисел.
      */
-    public ArrayList<ArrayList<Integer>> generateArrays(int arrayCount, int arraySize,double compositeProbability) {
+    public ArrayList<ArrayList<Integer>> generateArrays(
+            int arrayCount, int arraySize,double compositeProbability) {
         Random random = new Random();
         ArrayList<ArrayList<Integer>> testArrays = new ArrayList<>();
         ArrayList<Integer> primes = new PrimeNumberGenerator().simpleNums(MAX_PRIME);
@@ -34,7 +35,7 @@ public class GenerateArraysForTests {
             // С вероятностью COMPOSITE_PROBABILITY заменяем одно число на составное
             if (random.nextDouble() < compositeProbability) {
                 int replaceIndex = random.nextInt(testArray.size());
-                testArray.set(replaceIndex, random.nextInt(999_998) + 2); // Вставляем случайное составное число
+                testArray.set(replaceIndex, random.nextInt(999_998) + 2);
             }
 
             testArrays.add(testArray);

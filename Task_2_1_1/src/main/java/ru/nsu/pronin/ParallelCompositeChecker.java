@@ -47,7 +47,7 @@ public class ParallelCompositeChecker {
         @Override
         public void run() {
             for (int num : subList) {
-                if (hasComposite.get()) return;  // Прерываем проверку, если уже найдено составное число
+                if (hasComposite.get()) return;
                 if (new SingleThreadCompositeChecker().isComposite(num)) {
                     hasComposite.set(true);
                     return;
@@ -64,7 +64,8 @@ public class ParallelCompositeChecker {
      * @return {@code true}, если в массиве есть составное число, иначе {@code false}.
      * @throws InterruptedException если один из потоков был прерван.
      */
-    public boolean parallelHasComposite(ArrayList<Integer> array, int countThreads) throws InterruptedException {
+    public boolean parallelHasComposite(
+            ArrayList<Integer> array, int countThreads) throws InterruptedException {
         List<List<Integer>> subLists = divideTheArray(array, countThreads);
         AtomicBoolean hasComposite = new AtomicBoolean(false);
         Thread[] threads = new Thread[subLists.size()];
