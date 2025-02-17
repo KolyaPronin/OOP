@@ -1,6 +1,6 @@
 package ru.nsu.pronin;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 
 /**
@@ -15,7 +15,7 @@ public class ParallelStreamCompositeChecker {
      * @param array список чисел для проверки.
      * @return {@code true}, если найдено хотя бы одно составное число, иначе {@code false}.
      */
-    public boolean parallelStreamCompositeChecker(ArrayList<Integer> array) {
+    public boolean parallelStreamCompositeChecker(List<Integer> array) {
         Stream<Integer> streamArray = array.parallelStream();
         return streamArray.anyMatch(num -> new SingleThreadCompositeChecker().isComposite(num));
     }

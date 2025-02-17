@@ -16,7 +16,7 @@ public class ParallelCompositeChecker {
      * @param countThreads Количество потоков для разделения массива.
      * @return Список подмассивов.
      */
-    public List<List<Integer>> divideTheArray(ArrayList<Integer> array, int countThreads) {
+    public List<List<Integer>> divideTheArray(List<Integer> array, int countThreads) {
         List<List<Integer>> subLists = new ArrayList<>();
         int chunkSize = (int) Math.ceil((double) array.size() / countThreads);
 
@@ -67,7 +67,7 @@ public class ParallelCompositeChecker {
      * @throws InterruptedException если один из потоков был прерван.
      */
     public boolean parallelHasComposite(
-            ArrayList<Integer> array, int countThreads) throws InterruptedException {
+            List<Integer> array, int countThreads) throws InterruptedException {
         List<List<Integer>> subLists = divideTheArray(array, countThreads);
         AtomicBoolean hasComposite = new AtomicBoolean(false);
         Thread[] threads = new Thread[subLists.size()];

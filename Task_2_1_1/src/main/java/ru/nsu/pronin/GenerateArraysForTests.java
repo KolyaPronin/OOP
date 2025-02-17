@@ -1,6 +1,7 @@
 package ru.nsu.pronin;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -17,11 +18,11 @@ public class GenerateArraysForTests {
      *
      * @return список из arrayCount массивов случайных чисел.
      */
-    public ArrayList<ArrayList<Integer>> generateArrays(
+    public List<List<Integer>> generateArrays(
             int arrayCount, int arraySize, double compositeProbability) {
         Random random = new Random();
-        ArrayList<ArrayList<Integer>> testArrays = new ArrayList<>();
-        ArrayList<Integer> primes = new PrimeNumberGenerator().simpleNums(MAX_PRIME);
+        List<List<Integer>> testArrays = new ArrayList<>();
+        List<Integer> primes = new PrimeNumberGenerator().simpleNums(MAX_PRIME);
 
         for (int i = 0; i < arrayCount; i++) {
             ArrayList<Integer> testArray = new ArrayList<>();

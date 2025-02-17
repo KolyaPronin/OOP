@@ -1,6 +1,7 @@
 package ru.nsu.pronin;
 
-import java.util.ArrayList;
+
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -18,7 +19,7 @@ public class Main {
         int arrayCount = scanner.nextInt();
         int arraySize = 1000;
         double compositeProbability = 1;
-        ArrayList<ArrayList<Integer>> testArrays = new GenerateArraysForTests()
+        List<List<Integer>> testArrays = new GenerateArraysForTests()
                 .generateArrays(arrayCount, arraySize, compositeProbability);
         // Последовательный метод
         double startTimeMethod1 = System.currentTimeMillis();

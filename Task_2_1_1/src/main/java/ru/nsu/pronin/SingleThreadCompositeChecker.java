@@ -1,6 +1,7 @@
 package ru.nsu.pronin;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Класс для проверки чисел на составность с использованием одного потока.
@@ -13,7 +14,7 @@ public class SingleThreadCompositeChecker {
      * @param array Массив целых чисел для проверки.
      * @return {@code true}, если хотя бы одно число составное, иначе {@code false}.
      */
-    public boolean simpleNumber(ArrayList<Integer> array) {
+    public boolean simpleNumber(List<Integer> array) {
         for (int num : array) {
             if (isComposite(num)) {
                 return true;
