@@ -115,11 +115,21 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Метод closePizzeria при вызове устанавливает флаг isOpen в false.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#openPizzeria()" class="member-name-link">openPizzeria</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isProgramRunning()" class="member-name-link">isProgramRunning</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Возвращает флаг остановки программы</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#openPizzeria()" class="member-name-link">openPizzeria</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Метод openPizzeria при вызове устанавливает флаг isOpen в true и будит потоки (notifyAll()),
  которые засыпают (wait()) при закрытии пиццерии.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stopProgram()" class="member-name-link">stopProgram</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Метод для остановки программы</div>
 </div>
 </div>
 </div>
@@ -165,6 +175,20 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">openPizzeria</span>()</div>
 <div class="block">Метод openPizzeria при вызове устанавливает флаг isOpen в true и будит потоки (notifyAll()),
  которые засыпают (wait()) при закрытии пиццерии.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="stopProgram()">
+<h3>stopProgram</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stopProgram</span>()</div>
+<div class="block">Метод для остановки программы</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isProgramRunning()">
+<h3>isProgramRunning</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isProgramRunning</span>()</div>
+<div class="block">Возвращает флаг остановки программы</div>
 </section>
 </li>
 <li>
