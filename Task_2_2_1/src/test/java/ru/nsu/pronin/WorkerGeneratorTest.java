@@ -19,8 +19,8 @@ class WorkerGeneratorTest {
     void testWorkerBaker() {
         PriorityQueue<Order> order = new GeneralQueueOfOrders().orders;
         OrderGenerator.orderGenerator(order, 3);
-        WorkerGenerator.workerBakerGenerator(order, 2);
         assertEquals(3, order.size(), "Очередь должна содержать 3 заказа");
+        WorkerGenerator.workerBakerGenerator(order, 2);
         assertTrue(order.size() < 3, "Повара должны начать забирать заказы");
         assertDoesNotThrow(() -> WorkerGenerator.workerBakerGenerator(order, 2)); // что не падает и исключением
     }
