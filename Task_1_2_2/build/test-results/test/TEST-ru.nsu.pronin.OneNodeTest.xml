@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.nsu.pronin.OneNodeTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-12-16T04:19:57" hostname="DESKTOP-JGHT4H6" time="0.074">
+  <properties/>
+  <testcase name="getKey()" classname="ru.nsu.pronin.OneNodeTest" time="0.049"/>
+  <testcase name="getNextWithoutNext()" classname="ru.nsu.pronin.OneNodeTest" time="0.003"/>
+  <testcase name="hasNext()" classname="ru.nsu.pronin.OneNodeTest" time="0.002"/>
+  <testcase name="setValue()" classname="ru.nsu.pronin.OneNodeTest" time="0.002"/>
+  <testcase name="getValue()" classname="ru.nsu.pronin.OneNodeTest" time="0.002"/>
+  <testcase name="setNext()" classname="ru.nsu.pronin.OneNodeTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

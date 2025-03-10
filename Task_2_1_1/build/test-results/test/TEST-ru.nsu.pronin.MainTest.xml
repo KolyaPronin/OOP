@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.nsu.pronin.MainTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2025-02-17T15:46:21" hostname="DESKTOP-JGHT4H6" time="4.511">
+  <properties/>
+  <testcase name="bigArraySecondTestThirdMethod()" classname="ru.nsu.pronin.MainTest" time="0.683"/>
+  <testcase name="bigArrayFirstTestSecondMethod()" classname="ru.nsu.pronin.MainTest" time="0.588"/>
+  <testcase name="smallArraySecondTestFirstMethod()" classname="ru.nsu.pronin.MainTest" time="0.499"/>
+  <testcase name="middleArraySecondTestFirstMethod()" classname="ru.nsu.pronin.MainTest" time="0.444"/>
+  <testcase name="smallArrayFirstTestFirstMethod()" classname="ru.nsu.pronin.MainTest" time="0.43"/>
+  <testcase name="mainTest()" classname="ru.nsu.pronin.MainTest" time="0.515"/>
+  <testcase name="bigArraySecondTestSecondMethod()" classname="ru.nsu.pronin.MainTest" time="0.47"/>
+  <testcase name="middleArrayFirstTestFirstMethod()" classname="ru.nsu.pronin.MainTest" time="0.392"/>
+  <testcase name="bigArrayFirstTestThirdMethod()" classname="ru.nsu.pronin.MainTest" time="0.48"/>
+  <system-out><![CDATA[Введите число массивов: 
+true
+0,00100
+Введите число потоков
+Threads: false
+0,04900
+parallel stream:true
+0,02500
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
