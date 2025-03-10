@@ -22,7 +22,6 @@ public class Baker {
     Baker(int id, int time, PriorityQueue<Order> orders) {
         this.id = id;
         this.orders = orders;
-        this.state = false;
         this.time = time;
     }
 
@@ -31,18 +30,15 @@ public class Baker {
      *
      * @throws InterruptedException если выполнение потоков прерывается.
      * */
-    public  boolean  baker() throws InterruptedException {
+    public void baker() throws InterruptedException {
         Order order;
         synchronized (orders) {
             if (orders.isEmpty()) {
                 System.out.println("Очередь пуста и пекарь откисает 💤💤💤");
-                state = false;
                 orders.wait();
             }
             order = orders.poll(); // синхронизация по взятию элемента из очереди
         }
-
-        state = true;
 
         order.setState("Готовится  пекарем 👨🏿‍🍳 ");
         System.out.println("Заказ 🍕 " + order.getId() + " " + order.getState() + " номер " + id);
@@ -60,7 +56,5 @@ public class Baker {
                 System.out.println("Место освободилось и пицца отправилась на склад 🎉🎉🎉");
             }
         }
-        state = false;
-        return true; // если пекарь свободен, то ему надо приниматься за работу
     }
 }

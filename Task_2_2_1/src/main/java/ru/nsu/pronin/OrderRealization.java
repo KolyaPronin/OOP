@@ -3,7 +3,7 @@ package ru.nsu.pronin;
 /**
  * Класс OrderRealization реализует интерфейс Order, используя геттеры и сеттеры.
  * */
-class OrderRealization implements Order {
+public class OrderRealization implements Order {
     private final int id;
     private final String type;
     private String state;

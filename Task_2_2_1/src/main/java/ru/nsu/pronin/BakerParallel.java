@@ -25,9 +25,7 @@ public class BakerParallel extends Thread {
         try {
             while (true) {
                 OpeningHours.checkOpen();
-                if (!baker.baker()) {
-                    break;
-                }
+                baker.baker();
             }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);

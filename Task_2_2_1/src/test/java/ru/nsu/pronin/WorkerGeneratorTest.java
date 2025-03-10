@@ -15,13 +15,16 @@ class WorkerGeneratorTest {
 
     /**
      * Метод тестирующий пекаря.
+     *
+     * @throws InterruptedException если выполнение потоков прерывается
      */
     @Test
-    void testWorkerBaker() {
+    void testWorkerBaker() throws InterruptedException {
         PriorityQueue<Order> order = new GeneralQueueOfOrders().orders;
         OrderGenerator.orderGenerator(order, 3);
         assertEquals(3, order.size(), "Очередь должна содержать 3 заказа");
         WorkerGenerator.workerBakerGenerator(order, 2);
+        Thread.sleep(5000);
         assertTrue(order.size() < 3, "Повара должны начать забирать заказы");
         assertDoesNotThrow(() -> WorkerGenerator.workerBakerGenerator(order, 2));
     }
