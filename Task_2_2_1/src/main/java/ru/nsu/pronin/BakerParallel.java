@@ -10,7 +10,7 @@ public class BakerParallel extends Thread {
 
     /**
      * Конструктор для инициализации пекаря.
-     * 
+     *
      * @param baker Пекарь для работы в потоке.
      */
     public BakerParallel(Baker baker) {
@@ -23,7 +23,7 @@ public class BakerParallel extends Thread {
     @Override
     public void run() {
         try {
-            while (true) {
+            while (OpeningHours.isProgramRunning()) {
                 OpeningHours.checkOpen();
                 if (!baker.baker()) {
                     break;

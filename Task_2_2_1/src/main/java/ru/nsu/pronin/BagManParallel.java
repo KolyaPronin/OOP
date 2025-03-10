@@ -6,7 +6,6 @@ package ru.nsu.pronin;
  */
 public class BagManParallel extends Thread {
     private BagMan runner;
-    private int bagCapacity;
 
     /**
      * Конструктор, инициализирует поле класса {@link BagManParallel}.
@@ -20,7 +19,7 @@ public class BagManParallel extends Thread {
      * до тех пор пока очередь склада не опустеет.
      */
     public void run() {
-        while (true) {
+        while (OpeningHours.isProgramRunning()) {
             synchronized (Warehouse.queueOfOrder) {
                 try {
                     OpeningHours.checkOpen();

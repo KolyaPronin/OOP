@@ -4,7 +4,8 @@ package ru.nsu.pronin;
  * Класс OpeningHours реализует симуляцию времени работы пиццерии.
  */
 public class OpeningHours {
-    private static boolean isOpen = true; // Флаг состояния пиццерии
+    static boolean isOpen = true; // Флаг состояния пиццерии
+    static boolean isProgramRunning = true; // Флаг для завершения программы
 
     /**
      * Метод closePizzeria при вызове устанавливает флаг isOpen в false.
@@ -26,6 +27,13 @@ public class OpeningHours {
         }
     }
 
+    public static void stopProgram() {
+        isProgramRunning = false;  // Завершаем программу
+    }
+
+    public static boolean isProgramRunning() {
+        return isProgramRunning;
+    }
     /**
      * Метод checkOpen закрывает пиццерию (заставляет потоки ждать),
      * до тех пор пока флаг (isOpen) не будет true.

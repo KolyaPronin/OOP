@@ -30,5 +30,6 @@ public class Main {
             Thread.sleep(500); // работники доделывают текущие заказы и завершают рабочий день
             OpeningHours.openPizzeria();
         }
+        OpeningHours.stopProgram();
     }
 }
