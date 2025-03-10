@@ -26,11 +26,16 @@ public class OpeningHours {
             OpeningHours.class.notifyAll();
         }
     }
-
+    /**
+     * Метод для остановки программы
+     * */
     public static void stopProgram() {
         isProgramRunning = false;  // Завершаем программу
     }
 
+    /**
+     * Возвращает флаг остановки программы
+     * */
     public static boolean isProgramRunning() {
         return isProgramRunning;
     }
