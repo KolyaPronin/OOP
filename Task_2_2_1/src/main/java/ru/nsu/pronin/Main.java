@@ -23,16 +23,9 @@ public class Main {
             int workingTimeOfPizzeria = 10000;
             Thread.sleep(workingTimeOfPizzeria);
 
-            if (order.isEmpty()) {
-                System.exit(0);
-            }
-
             OpeningHours.closePizzeria();
             Thread.sleep(10000); // работники доделывают текущие заказы и завершают рабочий день
             OpeningHours.openPizzeria();
-        }
-        if (order.isEmpty()) {
-            System.exit(0);
         }
     }
 }
