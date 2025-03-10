@@ -4,9 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.PriorityQueue;
 import org.junit.jupiter.api.Test;
 
-import java.util.PriorityQueue;
 
 /**
  * Класс реализует тесты работников пиццерии.

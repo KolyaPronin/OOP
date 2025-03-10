@@ -1,7 +1,7 @@
 package ru.nsu.pronin;
 
 /**
- * Класс {@link BagManParallel} наследуется от {@link Thread}
+ * Класс {@link BagManParallel} наследуется от {@link Thread},
  * и реализует параллельную работу бегунков.
  */
 public class BagManParallel extends Thread {
@@ -9,7 +9,7 @@ public class BagManParallel extends Thread {
     private int bagCapacity;
 
     /**
-     * Конструктор, инициализирует поле класса {@link BagManParallel}
+     * Конструктор, инициализирует поле класса {@link BagManParallel}.
      */
     public BagManParallel(BagMan runner) {
         this.runner = runner;

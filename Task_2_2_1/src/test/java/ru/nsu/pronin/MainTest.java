@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 class MainTest {
 
     /**
-     * Тест для main()
+     * Тест для main().
      */
     @Test
     void mainTest() {

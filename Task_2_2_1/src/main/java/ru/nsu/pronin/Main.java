@@ -8,7 +8,10 @@ import java.util.PriorityQueue;
 public class Main {
 
     /**
+     * Метод main() реализует основную логику программы.
+     *
      * @param args аргументы командной строки (не используются).
+     *
      * @throws InterruptedException если выполнение потоков прерывается.
      */
     public static void main(String[] args) throws InterruptedException {

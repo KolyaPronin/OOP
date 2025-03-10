@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * Тесты для склада (WareHouse)
+ * Тесты для склада (WareHouse).
  * */
 class WareHouseTest {
     /**
@@ -40,8 +40,9 @@ class WareHouseTest {
         Order elementOfQueue = new OrderRealization(0, "pizza", "заказана");
         Warehouse.currentStateCapacity = 30;
         synchronized (Warehouse.queueOfOrder) {
-            if (Warehouse.isTherePlaceWareHouse())
+            if (Warehouse.isTherePlaceWareHouse()) {
                 Warehouse.storageInTheWareHouse(elementOfQueue);
+            }
         }
         assertFalse(Warehouse.isTherePlaceWareHouse());
     }

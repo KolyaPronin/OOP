@@ -14,11 +14,12 @@ public class Baker {
 
     /**
     * Конструктор для инициализации полей пекаря.
+     *
      * @param id - личный идентификатор пекаря.
      * @param time - время затраченное пекарем на выполнение заказа.
      * @param orders - очередь заказов.
      * */
-    Baker(int id, int time, PriorityQueue<Order> orders){
+    Baker(int id, int time, PriorityQueue<Order> orders) {
         this.id = id;
         this.orders = orders;
         this.state = false;
@@ -26,10 +27,9 @@ public class Baker {
     }
 
     /**
-     * Метод baker реализует выполнение заказов поваром
-     * @throws InterruptedException если выполнение потоков прерывается
-     * @return true - пекарь занят
-     * @return false - пекарь свободен
+     * Метод baker реализует выполнение заказов поваром.
+     *
+     * @throws InterruptedException если выполнение потоков прерывается.
      * */
     public  boolean  baker() throws InterruptedException {
         Order order;

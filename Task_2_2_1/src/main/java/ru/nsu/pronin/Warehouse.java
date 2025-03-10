@@ -6,9 +6,9 @@ import java.util.PriorityQueue;
  * Класс Warehouse (склад) реализует работу склада.
  */
 public class Warehouse {
-    final static int capacity = 30;
+    static final int capacity = 30;
     static int currentStateCapacity = 0;
-    final static PriorityQueue<Order> queueOfOrder = new GeneralQueueOfOrders().orders;
+    static final PriorityQueue<Order> queueOfOrder = new GeneralQueueOfOrders().orders;
 
     /**
      * Метод isTherePlaceWareHouse проверяет есть ли место на складе.

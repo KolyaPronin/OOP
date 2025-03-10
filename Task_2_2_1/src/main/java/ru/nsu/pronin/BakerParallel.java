@@ -10,6 +10,7 @@ public class BakerParallel extends Thread {
 
     /**
      * Конструктор для инициализации пекаря.
+     * 
      * @param baker Пекарь для работы в потоке.
      */
     public BakerParallel(Baker baker) {
