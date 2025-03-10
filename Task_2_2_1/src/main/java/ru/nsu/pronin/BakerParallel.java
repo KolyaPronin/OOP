@@ -1,8 +1,8 @@
 package ru.nsu.pronin;
 
 /**
- * Класс {@link BagManParallel} наследуется от {@link Thread}
- * и реализует параллельную работу пекарей
+ * Класс {@link BagManParallel} наследуется от {@link Thread}.
+ * И реализует параллельную работу пекарей.
  */
 public class BakerParallel extends Thread {
 
@@ -10,7 +10,6 @@ public class BakerParallel extends Thread {
 
     /**
      * Конструктор для инициализации пекаря.
-     *
      * @param baker Пекарь для работы в потоке.
      */
     public BakerParallel(Baker baker) {

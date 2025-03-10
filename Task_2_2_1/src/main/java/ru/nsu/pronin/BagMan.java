@@ -42,10 +42,12 @@ public class BagMan {
             }
             if (bag[i] != null) {
                 bag[i].setState("в пути 🚲");
-                System.out.println(" заказ 🍕 " + bag[i].getId() + " взят курьером 👨🏿‍🎓 " + id + " и он уже " + bag[i].getState());
+                System.out.println(" заказ 🍕 " + bag[i].getId() +
+                        " взят курьером 👨🏿‍🎓 " + id + " и он уже " + bag[i].getState());
                 Thread.sleep(time);
                 bag[i].setState(" заказ доставлен 🎉");
-                System.out.println(bag[i].getId() + bag[i].getState() + " курьером под номером " + id);
+                System.out.println(bag[i].getId() + bag[i].getState() +
+                        " курьером под номером " + id);
             }
         }
     }

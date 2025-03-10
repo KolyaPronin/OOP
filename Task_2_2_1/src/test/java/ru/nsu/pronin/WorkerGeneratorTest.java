@@ -1,11 +1,12 @@
 package ru.nsu.pronin;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.PriorityQueue;
-
 
 /**
  * Класс реализует тесты работников пиццерии.
@@ -22,13 +23,13 @@ class WorkerGeneratorTest {
         assertEquals(3, order.size(), "Очередь должна содержать 3 заказа");
         WorkerGenerator.workerBakerGenerator(order, 2);
         assertTrue(order.size() < 3, "Повара должны начать забирать заказы");
-        assertDoesNotThrow(() -> WorkerGenerator.workerBakerGenerator(order, 2)); // что не падает и исключением
+        assertDoesNotThrow(() -> WorkerGenerator.workerBakerGenerator(order, 2));
     }
 
     /**
      * Метод тестирующий бегунка.
      *
-     * @throws InterruptedException если выполнение потоков прерывается
+     * @throws InterruptedException если выполнение потоков прерывается.
      */
     @Test
     void testWorkerBagMan() throws InterruptedException {
@@ -43,7 +44,8 @@ class WorkerGeneratorTest {
             Warehouse.storageInTheWareHouse(elementOfQueue2);
         }
 
-        assertEquals(Warehouse.currentStateCapacity, Warehouse.currentStateCapacity, "Склад содержит 3 заказа после генерации");
+        assertEquals(Warehouse.currentStateCapacity, Warehouse.currentStateCapacity,
+                "Склад содержит 3 заказа после генерации");
         WorkerGenerator.workerBagManGenerator(2);
         Thread.sleep(1000);
         assertTrue(Warehouse.queueOfOrder.size() < 3, "Бегунки должны забрать заказы");

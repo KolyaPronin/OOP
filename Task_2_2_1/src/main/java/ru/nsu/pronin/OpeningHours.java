@@ -27,9 +27,10 @@ public class OpeningHours {
     }
 
     /**
-     * Метод checkOpen закрывает пиццерию (заставляет потоки ждать), до тех пор пока флаг (isOpen) не будет true.
+     * Метод checkOpen закрывает пиццерию (заставляет потоки ждать),
+     * до тех пор пока флаг (isOpen) не будет true.
      *
-     * @throws InterruptedException если выполнение потоков прерывается
+     * @throws InterruptedException если выполнение потоков прерывается.
      */
     public static void checkOpen() throws InterruptedException {
         synchronized (OpeningHours.class) {

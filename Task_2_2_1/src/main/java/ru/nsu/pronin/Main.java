@@ -3,13 +3,13 @@ package ru.nsu.pronin;
 import java.util.PriorityQueue;
 
 /**
- * Главный класс запуска программы
+ * Главный класс запуска программы.
  */
 public class Main {
 
     /**
-     * @param args аргументы командной строки (не используются)
-     * @throws InterruptedException если выполнение потоков прерывается
+     * @param args аргументы командной строки (не используются).
+     * @throws InterruptedException если выполнение потоков прерывается.
      */
     public static void main(String[] args) throws InterruptedException {
 

@@ -31,10 +31,10 @@ class OrderRealization implements Order {
     private String state;
 
     /**
-     * метод setState заполняет поле state интерфейса Order
+     * метод setState заполняет поле state интерфейса Order.
      *
      * @param state - состояние заказа:
-     *              [заказан, готовится пекарем, готов, отправлен на склад, в пути, доставлен]
+     *              [заказан, готовится пекарем, готов, отправлен на склад, в пути, доставлен].
      */
     public void setState(String state) {
         this.state = state;
