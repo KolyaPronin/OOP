@@ -71,4 +71,4 @@ class OrderRealization implements Order{
         this.type = type;
         this.state = state;
     }
-}
+
