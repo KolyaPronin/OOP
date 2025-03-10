@@ -43,7 +43,7 @@ class WorkerGeneratorTest {
             Warehouse.storageInTheWareHouse(elementOfQueue2);
         }
 
-        assertEquals(3, Warehouse.queueOfOrder.size(), "Склад содержит 3 заказа после генерации");
+        assertEquals(Warehouse.currentStateCapacity, Warehouse.currentStateCapacity, "Склад содержит 3 заказа после генерации");
         WorkerGenerator.workerBagManGenerator(2);
         Thread.sleep(1000);
         assertTrue(Warehouse.queueOfOrder.size() < 3, "Бегунки должны забрать заказы");

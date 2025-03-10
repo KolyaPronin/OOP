@@ -20,11 +20,11 @@ public class Main {
         WorkerGenerator.workerBagManGenerator(5);
 
         for (int i = 0; i < 5; i++) { // 5 дней 2-ое выходных
-            int workingTimeOfPizzeria = 10000;
+            int workingTimeOfPizzeria = 500;
             Thread.sleep(workingTimeOfPizzeria);
 
             OpeningHours.closePizzeria();
-            Thread.sleep(10000); // работники доделывают текущие заказы и завершают рабочий день
+            Thread.sleep(500); // работники доделывают текущие заказы и завершают рабочий день
             OpeningHours.openPizzeria();
         }
     }
