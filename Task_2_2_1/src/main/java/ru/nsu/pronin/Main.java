@@ -19,7 +19,7 @@ public class Main {
         WorkerGenerator.workerBakerGenerator(order, 5);
         WorkerGenerator.workerBagManGenerator(5);
 
-        for (int i = 0; i < 5; i++) { // 5 дней 2 выходных
+        for (int i = 0; i < 5; i++) { // 5 дней 2-ое выходных
             int workingTimeOfPizzeria = 10000;
             Thread.sleep(workingTimeOfPizzeria);
 
