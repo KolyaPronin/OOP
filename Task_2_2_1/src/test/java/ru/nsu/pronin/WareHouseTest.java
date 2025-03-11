@@ -24,7 +24,7 @@ class WareHouseTest {
      * */
     @Test
     void testAddElementToWareHouse() {
-        Order elementOfQueue = new OrderRealization(0, "pizza", "заказана");
+        Order elementOfQueue = new OrderImpl(0, "pizza", "заказана");
         synchronized (Warehouse.queueOfOrder) {
             Warehouse.storageInTheWareHouse(elementOfQueue);
         }
@@ -37,7 +37,7 @@ class WareHouseTest {
     @Test
     void testCapacityOfTheWarehouse() {
         OrderGenerator.orderGenerator(Warehouse.queueOfOrder, 30);
-        Order elementOfQueue = new OrderRealization(0, "pizza", "заказана");
+        Order elementOfQueue = new OrderImpl(0, "pizza", "заказана");
         Warehouse.currentStateCapacity = 30;
         synchronized (Warehouse.queueOfOrder) {
             if (Warehouse.isTherePlaceWareHouse()) {

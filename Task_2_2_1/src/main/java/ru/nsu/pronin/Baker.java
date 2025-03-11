@@ -50,7 +50,7 @@ public class Baker {
             } else {
                 while (!Warehouse.isTherePlaceWareHouse()) {
                     System.out.println("Склад полон, пекарь ждет... 🕐 ");
-                    Thread.sleep(1000);
+                    Thread.sleep(1000); // ???
                 }
                 System.out.println("Место освободилось и пицца отправилась на склад 🎉🎉🎉");
             }

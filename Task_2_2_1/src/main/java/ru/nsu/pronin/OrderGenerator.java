@@ -15,7 +15,7 @@ public class OrderGenerator {
      */
     public static void orderGenerator(PriorityQueue<Order> order, int orderCount) {
         for (int i = 0; i < orderCount; i++) {
-            Order elementOfQueue = new OrderRealization(i, "pizza", "заказана");
+            Order elementOfQueue = new OrderImpl(i, "pizza", "заказана");
             order.add(elementOfQueue);
         }
     }

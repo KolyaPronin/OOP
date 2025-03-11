@@ -5,8 +5,8 @@ package ru.nsu.pronin;
  * Используется для возможного расширения "объекта" заказа.
  * */
 interface Order {
-    void setState(String state);
     int getId();
     String getType();
     String getState();
+    void setState(String state);
 }

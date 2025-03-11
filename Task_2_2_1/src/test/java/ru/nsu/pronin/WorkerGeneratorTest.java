@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.PriorityQueue;
 import org.junit.jupiter.api.Test;
 
-
 /**
  * Класс реализует тесты работников пиццерии.
  */
@@ -25,7 +24,7 @@ class WorkerGeneratorTest {
         assertEquals(3, order.size(), "Очередь должна содержать 3 заказа");
         WorkerGenerator.workerBakerGenerator(order, 2);
         Thread.sleep(5000);
-        //assertTrue(order.size() < 3, "Повара должны начать забирать заказы");
+        assertTrue(order.size() < 3, "Повара должны начать забирать заказы");
         assertDoesNotThrow(() -> WorkerGenerator.workerBakerGenerator(order, 2));
     }
 
@@ -37,9 +36,9 @@ class WorkerGeneratorTest {
     @Test
     void testWorkerBagMan() throws InterruptedException {
         Warehouse.queueOfOrder.clear();
-        Order elementOfQueue = new OrderRealization(0, "pizza", "заказана");
-        Order elementOfQueue1 = new OrderRealization(1, "pizza", "заказана");
-        Order elementOfQueue2 = new OrderRealization(2, "pizza", "заказана");
+        Order elementOfQueue = new OrderImpl(0, "pizza", "заказана");
+        Order elementOfQueue1 = new OrderImpl(1, "pizza", "заказана");
+        Order elementOfQueue2 = new OrderImpl(2, "pizza", "заказана");
 
         synchronized (Warehouse.queueOfOrder) {
             Warehouse.storageInTheWareHouse(elementOfQueue);
