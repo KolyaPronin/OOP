@@ -5,6 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.nsu.pronin.data.Order;
+import ru.nsu.pronin.data.OrderImpl;
+import ru.nsu.pronin.process.OrderGenerator;
+import ru.nsu.pronin.process.Warehouse;
 
 /**
  * Тесты для склада (WareHouse).
@@ -26,9 +30,9 @@ class WareHouseTest {
     void testAddElementToWareHouse() {
         Order elementOfQueue = new OrderImpl(0, "pizza", "заказана");
         synchronized (Warehouse.queueOfOrder) {
-            Warehouse.storageInTheWareHouse(elementOfQueue);
+            Warehouse.storeInWareHouse(elementOfQueue);
         }
-        assertEquals(elementOfQueue, Warehouse.queueOfOrder.poll());
+        assertEquals(elementOfQueue, Warehouse.queueOfOrder.pollWithWait());
     }
 
     /**
@@ -36,12 +40,12 @@ class WareHouseTest {
      * */
     @Test
     void testCapacityOfTheWarehouse() {
-        OrderGenerator.orderGenerator(Warehouse.queueOfOrder, 30);
+        OrderGenerator.generateOrders(Warehouse.queueOfOrder, 30);
         Order elementOfQueue = new OrderImpl(0, "pizza", "заказана");
         Warehouse.currentStateCapacity = 30;
         synchronized (Warehouse.queueOfOrder) {
             if (Warehouse.isTherePlaceWareHouse()) {
-                Warehouse.storageInTheWareHouse(elementOfQueue);
+                Warehouse.storeInWareHouse(elementOfQueue);
             }
         }
         assertFalse(Warehouse.isTherePlaceWareHouse());

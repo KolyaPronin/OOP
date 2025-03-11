@@ -1,12 +1,15 @@
-package ru.nsu.pronin;
+package ru.nsu.pronin.people;
+
+import ru.nsu.pronin.data.Order;
+import ru.nsu.pronin.process.PizzeriaDispatcher;
 
 /**
- * Класс {@link BagManParallel} наследуется от {@link Thread}.
+ * Класс {@link BagManWorker} наследуется от {@link Thread}.
  * И реализует параллельную работу пекарей.
  */
 public class BakerParallel extends Thread {
 
-    private Baker baker;
+    private final Baker baker;
 
     /**
      * Конструктор для инициализации пекаря.
@@ -23,11 +26,10 @@ public class BakerParallel extends Thread {
     @Override
     public void run() {
         try {
-            while (OpeningHours.isProgramRunning()) {
-                OpeningHours.checkOpen();
-                if (!baker.baker()) {
-                    break;
-                }
+            while (PizzeriaDispatcher.isProgramRunning()) {
+                PizzeriaDispatcher.checkOpen();
+                Order order = baker.getOrderQueue().pollWithWait();
+                baker.bake(order);
             }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);

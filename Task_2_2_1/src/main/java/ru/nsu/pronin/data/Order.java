@@ -1,10 +1,10 @@
-package ru.nsu.pronin;
+package ru.nsu.pronin.data;
 
 /**
  * Интерфейс Order используется для инициализации полей заказа (Order).
  * Используется для возможного расширения "объекта" заказа.
  * */
-interface Order {
+public interface Order {
     int getId();
     String getType();
     String getState();

@@ -1,11 +1,11 @@
-package ru.nsu.pronin;
+package ru.nsu.pronin.process;
 
 /**
  * Класс OpeningHours реализует симуляцию времени работы пиццерии.
  */
-public class OpeningHours {
-    static boolean isOpen = true; // Флаг состояния пиццерии
-    static boolean isProgramRunning = true; // Флаг для завершения программы
+public class PizzeriaDispatcher {
+    private static boolean isOpen = true; // Флаг состояния пиццерии
+    private static volatile boolean isProgramRunning = true; // Флаг для завершения программы
 
     /**
      * Метод closePizzeria при вызове устанавливает флаг isOpen в false.
@@ -22,9 +22,7 @@ public class OpeningHours {
     public static synchronized void openPizzeria() {
         isOpen = true;
         System.out.println("✅ Пиццерия открылась!");
-        synchronized (OpeningHours.class) {
-            OpeningHours.class.notifyAll();
-        }
+        PizzeriaDispatcher.class.notifyAll();
     }
     /**
      * Метод для остановки программы
@@ -45,11 +43,9 @@ public class OpeningHours {
      *
      * @throws InterruptedException если выполнение потоков прерывается.
      */
-    public static void checkOpen() throws InterruptedException {
-        synchronized (OpeningHours.class) {
-            while (!isOpen) {
-                OpeningHours.class.wait();
-            }
+    public static synchronized void checkOpen() throws InterruptedException {
+        while (!isOpen) {
+            PizzeriaDispatcher.class.wait();
         }
     }
 }

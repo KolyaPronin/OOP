@@ -1,6 +1,9 @@
 package ru.nsu.pronin;
 
-import java.util.PriorityQueue;
+import ru.nsu.pronin.process.GeneralQueueOfOrders;
+import ru.nsu.pronin.process.OrderGenerator;
+import ru.nsu.pronin.process.PizzeriaDispatcher;
+import ru.nsu.pronin.process.WorkerGenerator;
 
 /**
  * Главный класс запуска программы.
@@ -16,21 +19,21 @@ public class Main {
      */
     public static void main(String[] args) throws InterruptedException {
 
-        PriorityQueue<Order> order = new GeneralQueueOfOrders().orders;
-        OrderGenerator.orderGenerator(order, 10);
+        GeneralQueueOfOrders orderQueue = new GeneralQueueOfOrders();
+        orderQueue.placeAllOrders(OrderGenerator.generateOrders(10));
 
-        WorkerGenerator.workerBakerGenerator(order, 5);
+        WorkerGenerator.generateBaker(orderQueue, 5);
         WorkerGenerator.workerBagManGenerator(5);
 
         for (int i = 0; i < 5; i++) { // 5 дней 2-ое выходных
             int workingTimeOfPizzeria = 500;
             Thread.sleep(workingTimeOfPizzeria);
 
-            OpeningHours.closePizzeria();
+            PizzeriaDispatcher.closePizzeria();
             Thread.sleep(500); // работники доделывают текущие заказы и завершают рабочий день
-            OpeningHours.openPizzeria();
+            PizzeriaDispatcher.openPizzeria();
         }
         Thread.sleep(10000);
-        OpeningHours.stopProgram();
+        PizzeriaDispatcher.stopProgram();
     }
 }

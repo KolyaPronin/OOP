@@ -6,6 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.PriorityQueue;
 import org.junit.jupiter.api.Test;
+import ru.nsu.pronin.data.Order;
+import ru.nsu.pronin.data.OrderImpl;
+import ru.nsu.pronin.process.GeneralQueueOfOrders;
+import ru.nsu.pronin.process.OrderGenerator;
+import ru.nsu.pronin.process.Warehouse;
+import ru.nsu.pronin.process.WorkerGenerator;
 
 /**
  * Класс реализует тесты работников пиццерии.
@@ -20,12 +26,12 @@ class WorkerGeneratorTest {
     @Test
     void testWorkerBaker() throws InterruptedException {
         PriorityQueue<Order> order = new GeneralQueueOfOrders().orders;
-        OrderGenerator.orderGenerator(order, 3);
+        OrderGenerator.generateOrders(order, 3);
         assertEquals(3, order.size(), "Очередь должна содержать 3 заказа");
-        WorkerGenerator.workerBakerGenerator(order, 2);
+        WorkerGenerator.generateBaker(order, 2);
         Thread.sleep(5000);
         assertTrue(order.size() < 3, "Повара должны начать забирать заказы");
-        assertDoesNotThrow(() -> WorkerGenerator.workerBakerGenerator(order, 2));
+        assertDoesNotThrow(() -> WorkerGenerator.generateBaker(order, 2));
     }
 
     /**
@@ -41,9 +47,9 @@ class WorkerGeneratorTest {
         Order elementOfQueue2 = new OrderImpl(2, "pizza", "заказана");
 
         synchronized (Warehouse.queueOfOrder) {
-            Warehouse.storageInTheWareHouse(elementOfQueue);
-            Warehouse.storageInTheWareHouse(elementOfQueue1);
-            Warehouse.storageInTheWareHouse(elementOfQueue2);
+            Warehouse.storeInWareHouse(elementOfQueue);
+            Warehouse.storeInWareHouse(elementOfQueue1);
+            Warehouse.storeInWareHouse(elementOfQueue2);
         }
 
         assertEquals(Warehouse.currentStateCapacity, Warehouse.currentStateCapacity,
@@ -51,7 +57,7 @@ class WorkerGeneratorTest {
         WorkerGenerator.workerBagManGenerator(2);
         Thread.sleep(1000);
         assertTrue(Warehouse.queueOfOrder.size() < 3, "Бегунки должны забрать заказы");
-        assertDoesNotThrow(() -> WorkerGenerator.workerBakerGenerator(Warehouse.queueOfOrder, 2));
+        assertDoesNotThrow(() -> WorkerGenerator.generateBaker(Warehouse.queueOfOrder, 2));
         Warehouse.queueOfOrder.clear();
     }
 

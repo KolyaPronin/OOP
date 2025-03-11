@@ -1,4 +1,4 @@
-package ru.nsu.pronin;
+package ru.nsu.pronin.data;
 
 /**
  * Класс OrderRealization реализует интерфейс Order, используя геттеры и сеттеры.
@@ -46,7 +46,7 @@ public class OrderImpl implements Order {
      * @param type  - type (тип заказа).
      * @param state - state (состояние заказа).
      */
-    OrderImpl(int id, String type, String state) {
+    public OrderImpl(int id, String type, String state) {
         this.id = id;
         this.type = type;
         this.state = state;
