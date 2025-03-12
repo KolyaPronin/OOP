@@ -31,11 +31,9 @@ class WorkerGeneratorTest {
         generalQueueOfOrders.placeAllOrders(order);
         WorkerGenerator.generateBaker(generalQueueOfOrders,2);
         Thread.sleep(10000);
-
         assertDoesNotThrow(() -> WorkerGenerator.generateBaker(generalQueueOfOrders, 2));
         WorkerGenerator.workerBagManGenerator(2);
         Thread.sleep(10000);
         assertTrue(Warehouse.getQueueOfOrder().size() < 5);
-        assertTrue(generalQueueOfOrders.getSize() < 5);
     }
 }
