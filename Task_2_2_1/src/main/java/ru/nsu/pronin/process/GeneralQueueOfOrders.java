@@ -20,9 +20,13 @@ public class GeneralQueueOfOrders {
     public synchronized Order pollWithWait() throws InterruptedException {
         Order order;
         while ((order = orders.poll()) == null) {
-            System.out.println("Очередь пуста и пекарь откисает 💤💤💤");
+            System.out.println("Очередь пуста и пекарь отдыхает 💤💤💤");
             wait();
         }
         return order;
+    }
+
+    public int getSize(){
+        return orders.size();
     }
 }

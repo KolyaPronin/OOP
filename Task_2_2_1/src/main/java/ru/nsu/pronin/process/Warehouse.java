@@ -32,7 +32,7 @@ public class Warehouse {
         System.out.println(element.getId() + element.getState());
         queueOfOrder.add(element);
         currentStateCapacity++;
-        Warehouse.class.notifyAll(); // правильно ли я делаю???
+        Warehouse.class.notifyAll();
     }
 
     public static synchronized void placeOrder(Order order) throws InterruptedException {
@@ -62,6 +62,11 @@ public class Warehouse {
         }
         return bag;
     }
+
+    public static PriorityQueue<Order> getQueueOfOrder() { // ??
+        return queueOfOrder;
+    }
+
 
     private static Order takeOrder() throws InterruptedException {
         if (Warehouse.currentStateCapacity != 0) {

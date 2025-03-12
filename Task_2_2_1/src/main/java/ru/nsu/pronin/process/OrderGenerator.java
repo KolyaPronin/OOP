@@ -16,7 +16,6 @@ public class OrderGenerator {
     /**
      * Метод, генерирующий заказы для очереди.
      *
-     * @param order      - очередь заказов куда будут помещаться сгенерированные заказы.
      * @param orderCount - количество заказов, которые требуется сгенерировать.
      */
     public static List<Order> generateOrders(int orderCount) {

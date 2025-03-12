@@ -4,7 +4,7 @@ import ru.nsu.pronin.data.Order;
 import ru.nsu.pronin.people.BagMan;
 import ru.nsu.pronin.people.BagManWorker;
 import ru.nsu.pronin.people.Baker;
-import ru.nsu.pronin.people.BakerParallel;
+import ru.nsu.pronin.people.BakerThread;
 
 import java.util.PriorityQueue;
 import java.util.Random;
@@ -25,7 +25,7 @@ public class WorkerGenerator {
         int randomTime = random.nextInt(1000, 4000);
         for (int i = 0; i < countOfWorker; i++) {
             Baker baker = new Baker(i, randomTime, orderQueue);
-            BakerParallel worker = new BakerParallel(baker);
+            BakerThread worker = new BakerThread(baker);
             new Thread(worker).start();
         }
     }

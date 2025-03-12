@@ -7,7 +7,7 @@ import ru.nsu.pronin.process.PizzeriaDispatcher;
  * Класс {@link BagManWorker} наследуется от {@link Thread}.
  * И реализует параллельную работу пекарей.
  */
-public class BakerParallel extends Thread {
+public class BakerThread extends Thread {
 
     private final Baker baker;
 
@@ -16,8 +16,9 @@ public class BakerParallel extends Thread {
      *
      * @param baker Пекарь для работы в потоке.
      */
-    public BakerParallel(Baker baker) {
+    public BakerThread(Baker baker) {
         this.baker = baker;
+
     }
 
     /**
