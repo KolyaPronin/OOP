@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ae73b8d3-efb4-4175-963f-742b63ab6e2f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Task_2_2_1/src/main/java/ru/nsu/pronin/BagMan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task_2_2_1/src/main/java/ru/nsu/pronin/BagManParallel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task_2_2_1/src/main/java/ru/nsu/pronin/Baker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task_2_2_1/src/main/java/ru/nsu/pronin/BakerParallel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task_2_2_1/src/main/java/ru/nsu/pronin/OpeningHours.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task_2_2_1/src/main/java/ru/nsu/pronin/OrderGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task_2_2_1/src/main/java/ru/nsu/pronin/Warehouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task_2_2_1/src/main/java/ru/nsu/pronin/WorkerGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task_2_2_1/src/test/java/ru/nsu/pronin/MainTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task_2_2_1/src/test/java/ru/nsu/pronin/WareHouseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task_2_2_1/src/test/java/ru/nsu/pronin/WorkerGeneratorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task_1_3_1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_1_3_1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/pronin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/pronin/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task_2_2_1/src/main/java/ru/nsu/pronin/GeneralQueueOfOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task_2_2_1/src/main/java/ru/nsu/pronin/GeneralQueueOfOrders.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2sI7tfCPjLQ9dUHTamQZkOw0jMs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.Build Task_2_1_1.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MainTest.bigArrayFirstTestSecondMethod.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MainTest.bigArraySecondTestSecondMethod.executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.MainTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MainTest.mainTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.MainTest.middleArrayMethodOne.executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.MainTest.middleArraySecondTestFirstMethod.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MainTest.middleArraySecondTestMethodOne.executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.MainTest.smallArrayFirstTestFirstMethod.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Task_2_1_1 [:ru.nsu.pronin.Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MainTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MainTest.smallArrayMethodOne.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Task__2__1__1&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kolya/OneDrive/Рабочий стол/папки/уроки/НГУ УЧЕБА/2курс/LeetcodeJava/testFile&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/kolya/oop/OOP/Task_2_1_1/src/main/java/ru/nsu/pronin/Main.java&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="ru.nsu.pronin" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.nsu.pronin.Main" />
+      <module name="Task_2_1_1.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.nsu.pronin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.nsu.pronin.MainTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="MainTest.mainTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.nsu.pronin.MainTest.mainTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="MainTest.middleArraySecondTestFirstMethod" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.nsu.pronin.MainTest.middleArraySecondTestFirstMethod&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="MainTest.smallArrayFirstTestFirstMethod" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.nsu.pronin.MainTest.smallArrayFirstTestFirstMethod&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.MainTest" />
+        <item itemvalue="Gradle.MainTest.middleArraySecondTestFirstMethod" />
+        <item itemvalue="Gradle.MainTest.smallArrayFirstTestFirstMethod" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Gradle.MainTest.mainTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ae73b8d3-efb4-4175-963f-742b63ab6e2f" name="Changes" comment="" />
+      <created>1738131451881</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738131451881</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Task_2_1_1$MainTest_middleArrayMethodOne.ic" NAME="MainTest.middleArrayMethodOne Coverage Results" MODIFIED="1739112269585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Task_2_1_1$MainTest_bigArraySecondTestSecondMethod.ic" NAME="MainTest.bigArraySecondTestSecondMethod Coverage Results" MODIFIED="1739113396688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Task_2_1_1$MainTest_middleArraySecondTestMethodOne.ic" NAME="MainTest.middleArraySecondTestMethodOne Coverage Results" MODIFIED="1739112402136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Task_2_1_1$MainTest.ic" NAME="MainTest Coverage Results" MODIFIED="1739111954544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Task_2_1_1$MainTest_mainTest.ic" NAME="MainTest.mainTest Coverage Results" MODIFIED="1739114082489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+  </component>
+</project>
