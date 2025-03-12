@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.pronin"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.pronin"},{"l":"ru.nsu.pronin.data"},{"l":"ru.nsu.pronin.people"},{"l":"ru.nsu.pronin.process"}];updateSearchResults();

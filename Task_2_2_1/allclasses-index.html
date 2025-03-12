@@ -15,7 +15,11 @@
 <script type="text/javascript" src="script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="all-classes-index-page">
-<script type="text/javascript">var pathtoroot = "./";
+<script type="text/javascript">var evenRowColor = "even-row-color";
+var oddRowColor = "odd-row-color";
+var tableTab = "table-tab";
+var activeTableTab = "active-table-tab";
+var pathtoroot = "./";
 loadScripts(document, 'script');</script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -27,7 +31,8 @@ loadScripts(document, 'script');</script>
 <div class="top-nav" id="navbar-top">
 <div class="skip-nav"><a href="#skip-navbar-top" title="Skip navigation links">Skip navigation links</a></div>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
-<li><a href="ru/nsu/pronin/package-summary.html">Package</a></li>
+<li><a href="index.html">Overview</a></li>
+<li>Package</li>
 <li>Class</li>
 <li><a href="overview-tree.html">Tree</a></li>
 <li><a href="index-all.html">Index</a></li>
@@ -49,30 +54,31 @@ loadScripts(document, 'script');</script>
 <h1 title="All Classes and Interfaces" class="title">All Classes and Interfaces</h1>
 </div>
 <div id="all-classes-table">
-<div class="caption"><span>Classes</span></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="all-classes-table-tab0" role="tab" aria-selected="true" aria-controls="all-classes-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="all-classes-table-tab1" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab1', 2)" class="table-tab">Interfaces</button><button id="all-classes-table-tab2" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab2', 2)" class="table-tab">Classes</button></div>
+<div id="all-classes-table.tabpanel" role="tabpanel" aria-labelledby="all-classes-table-tab0">
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/BagMan.html" title="class in ru.nsu.pronin">BagMan</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/people/BagMan.html" title="class in ru.nsu.pronin.people">BagMan</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Класс BagMan реализует отдельно взятого курьера,
  который в будущем будет использоваться в потоке.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/BagManParallel.html" title="class in ru.nsu.pronin">BagManParallel</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/people/BagManWorker.html" title="class in ru.nsu.pronin.people">BagManWorker</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
-<div class="block">Класс <a href="ru/nsu/pronin/BagManParallel.html" title="class in ru.nsu.pronin"><code>BagManParallel</code></a> наследуется от <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link"><code>Thread</code></a>,
+<div class="block">Класс <a href="ru/nsu/pronin/people/BagManWorker.html" title="class in ru.nsu.pronin.people"><code>BagManWorker</code></a> наследуется от <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link"><code>Thread</code></a>,
  и реализует параллельную работу бегунков.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/Baker.html" title="class in ru.nsu.pronin">Baker</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/people/Baker.html" title="class in ru.nsu.pronin.people">Baker</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Класс Baker реализует отдельно взятого пекаря,
  который в будущем будет использоваться в потоке.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/BakerParallel.html" title="class in ru.nsu.pronin">BakerParallel</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/people/BakerThread.html" title="class in ru.nsu.pronin.people">BakerThread</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
-<div class="block">Класс <a href="ru/nsu/pronin/BagManParallel.html" title="class in ru.nsu.pronin"><code>BagManParallel</code></a> наследуется от <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link"><code>Thread</code></a>.</div>
+<div class="block">Класс <a href="ru/nsu/pronin/people/BagManWorker.html" title="class in ru.nsu.pronin.people"><code>BagManWorker</code></a> наследуется от <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Thread.html" title="class or interface in java.lang" class="external-link"><code>Thread</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/GeneralQueueOfOrders.html" title="class in ru.nsu.pronin">GeneralQueueOfOrders</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/process/GeneralQueueOfOrders.html" title="class in ru.nsu.pronin.process">GeneralQueueOfOrders</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Класс GeneralQueueOfOrders инициализирует и определяет очередь,
  которая используется для очереди заказов и для очереди склада.</div>
@@ -81,25 +87,30 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Главный класс запуска программы.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/OpeningHours.html" title="class in ru.nsu.pronin">OpeningHours</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
-<div class="block">Класс OpeningHours реализует симуляцию времени работы пиццерии.</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="ru/nsu/pronin/data/Order.html" title="interface in ru.nsu.pronin.data">Order</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Интерфейс Order используется для инициализации полей заказа (Order).</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/OrderGenerator.html" title="class in ru.nsu.pronin">OrderGenerator</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/process/OrderGenerator.html" title="class in ru.nsu.pronin.process">OrderGenerator</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
-<div class="block">Класс <a href="ru/nsu/pronin/OrderGenerator.html" title="class in ru.nsu.pronin"><code>OrderGenerator</code></a> который реализует генерацию заказов для очереди.</div>
+<div class="block">Класс <a href="ru/nsu/pronin/process/OrderGenerator.html" title="class in ru.nsu.pronin.process"><code>OrderGenerator</code></a> который реализует генерацию заказов для очереди.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/OrderRealization.html" title="class in ru.nsu.pronin">OrderRealization</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/data/OrderImpl.html" title="class in ru.nsu.pronin.data">OrderImpl</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Класс OrderRealization реализует интерфейс Order, используя геттеры и сеттеры.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/Warehouse.html" title="class in ru.nsu.pronin">Warehouse</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/process/PizzeriaDispatcher.html" title="class in ru.nsu.pronin.process">PizzeriaDispatcher</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Класс OpeningHours реализует симуляцию времени работы пиццерии.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/process/Warehouse.html" title="class in ru.nsu.pronin.process">Warehouse</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Класс Warehouse (склад) реализует работу склада.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/WorkerGenerator.html" title="class in ru.nsu.pronin">WorkerGenerator</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/pronin/process/WorkerGenerator.html" title="class in ru.nsu.pronin.process">WorkerGenerator</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Генерирует работников (пекарей и бегунков) в отдельных потоках.</div>
+</div>
 </div>
 </div>
 </div>
