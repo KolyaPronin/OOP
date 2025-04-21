@@ -25,10 +25,22 @@ public class GameMenu {
             }
         });
 
+        Button settingBtn = new Button("Setting");
+        settingBtn.setOnAction(e -> {
+            try {
+                Setting setting = new Setting();
+                Scene settingScene = setting.createSettingWindow(stage);
+                stage.setScene(settingScene);
+                stage.show();
+            } catch (Exception ex) {
+                throw  new RuntimeException(ex);
+            }
+        });
+
         Button exitBtn = new Button("Exit");
         exitBtn.setOnAction(e -> stage.close());
 
-        menuBox.getChildren().addAll(title, playBtn, exitBtn);
+        menuBox.getChildren().addAll(title, playBtn, settingBtn, exitBtn);
         return new Scene(menuBox, 600, 600);
     }
 }
