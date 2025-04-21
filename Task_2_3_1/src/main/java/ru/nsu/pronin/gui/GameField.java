@@ -23,6 +23,7 @@ import java.awt.geom.Point2D;
 
 public class GameField extends Application {
     private static Point2D lastTailPosition;
+    private static PauseTransition pause = new PauseTransition(Duration.millis(50));
 
     public void field(){
         launch();
@@ -57,7 +58,7 @@ public class GameField extends Application {
         root.getChildren().add(canvas);
 
 
-        PauseTransition pause = new PauseTransition(Duration.millis(50));
+        //PauseTransition pause = new PauseTransition(Duration.millis(50));
 
         GraphicsContext snake = canvas.getGraphicsContext2D();
         GraphicsContext apple = canvas.getGraphicsContext2D();
@@ -84,6 +85,7 @@ public class GameField extends Application {
             service.move();
             boolean gameOver = fieldService.borderChecker(pause);
 
+
             if (gameOver) {
                 Text gameOverText = new Text("GAME OVER");
                 gameOverText.setFont(Font.font(70));
@@ -94,6 +96,18 @@ public class GameField extends Application {
 
 
                 root.getChildren().add(gameOverText);
+
+                return;
+            }
+
+            if(SnakeData.getSnakeList().size() == SnakeData.getNumberOfPointForVictory() + 1){
+                Text youWinText = new Text("You Win");
+                youWinText.setFont(Font.font(70));
+                youWinText.setFill(Color.RED);
+                youWinText.setX(FieldData.getSizeX()/2 - youWinText.getLayoutBounds().getWidth()/2);
+                youWinText.setY(FieldData.getSizeY()/2);
+
+                root.getChildren().add(youWinText);
 
                 return;
             }
@@ -155,5 +169,9 @@ public class GameField extends Application {
         SnakeData.setState(0);
 
         context.pause.play();
+    }
+
+    public static PauseTransition getPause(){
+        return pause;
     }
 }

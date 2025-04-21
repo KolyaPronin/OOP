@@ -1,10 +1,13 @@
 package ru.nsu.pronin.controller;
 
 import javafx.animation.Animation;
+import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import ru.nsu.pronin.data.SnakeData;
 import ru.nsu.pronin.gui.GameContext;
 import ru.nsu.pronin.gui.GameField;
+import ru.nsu.pronin.gui.GameMenu;
+import ru.nsu.pronin.gui.Setting;
 
 public class SnakeController {
     public void handleKey(KeyCode code, GameContext context) {
@@ -13,8 +16,13 @@ public class SnakeController {
             return;
         }
 
-        if (code == KeyCode.ESCAPE) {
-            context.stage.close();
+        if (code == KeyCode.ESCAPE){
+            context.pause.stop();   // ошибка что после паузы проходит сквозь препятствия.
+            GameMenu menu = new GameMenu();
+            Scene menuScene = menu.createMenu(context.stage, new GameField());
+            context.stage.setScene(menuScene);
+
+            //context.stage.close();
         }
 
         if (code == KeyCode.SPACE) {
