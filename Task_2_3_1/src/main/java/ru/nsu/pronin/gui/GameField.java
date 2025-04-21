@@ -23,12 +23,25 @@ import java.awt.geom.Point2D;
 
 public class GameField extends Application {
     private static Point2D lastTailPosition;
+
     public void field(){
         launch();
 
     }
 
-    public void start(Stage stage) throws Exception {
+    @Override
+    public void start(Stage stage) {
+        showMenu(stage);
+    }
+
+    public void showMenu(Stage stage) {
+        GameMenu menu = new GameMenu();
+        Scene menuScene = menu.createMenu(stage, this);
+        stage.setScene(menuScene);
+        stage.show();
+    }
+
+    public void startGame(Stage stage) throws Exception {
         FieldData.field();
 
         Canvas canvas = new Canvas(600, 600);

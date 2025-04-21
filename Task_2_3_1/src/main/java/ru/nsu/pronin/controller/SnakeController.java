@@ -1,5 +1,6 @@
 package ru.nsu.pronin.controller;
 
+import javafx.animation.Animation;
 import javafx.scene.input.KeyCode;
 import ru.nsu.pronin.data.SnakeData;
 import ru.nsu.pronin.gui.GameContext;
@@ -10,6 +11,18 @@ public class SnakeController {
         if (code == KeyCode.ENTER) {
             GameField.restart(context);
             return;
+        }
+
+        if (code == KeyCode.ESCAPE) {
+            context.stage.close();
+        }
+
+        if (code == KeyCode.SPACE) {
+            if (context.pause.getStatus() == Animation.Status.PAUSED) {
+                context.pause.play();
+            } else {
+                context.pause.pause();
+            }
         }
         if (SnakeData.isDirectionChangedThisTick()) return;
 
