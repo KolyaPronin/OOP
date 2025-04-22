@@ -9,18 +9,17 @@ public class SnakeData {
     private static final List<Point> snakeList = new ArrayList<Point>(head);
     private static int state = 0; // состояние 0 слева направо, 1 сверху  вниз, 2 справа налево, 3 снизу вверх
     private static boolean directionChangedThisTick = false;
-    public static int numberOfPointForVictory = 0;
+    public static int numberOfPointForVictory = 10;
 
     /**
      * Метод добавления
      */
     public void addPointToList(int x, int y){
         snakeList.add(new Point(x, y));
-
     }
 
     /**
-    * Метод удаления хвоста
+    * The tail removal method
     */
     public static void deletePointFromList(){
         snakeList.remove(snakeList.size() - 1);

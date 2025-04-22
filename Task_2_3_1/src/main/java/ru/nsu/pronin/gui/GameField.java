@@ -117,7 +117,7 @@ public class GameField extends Application {
             gc.fillRect(oldX, oldY, 10, 10);
 
 
-            apple.setFill(Color.RED);
+            apple.setFill(Color.DARKRED);
             for (int i = 0; i < FieldData.getApple().size(); i++) {
                 apple.fillRect(FieldData.getApple().get(i).getX(),FieldData.getApple().get(i).getY(),10,10);
             }
@@ -129,7 +129,7 @@ public class GameField extends Application {
 
             pause.playFromStart();
         });
-        pause.play(); // старт
+        pause.play();
 
         sceneGame.setOnKeyPressed(event -> {
             try {
@@ -160,7 +160,7 @@ public class GameField extends Application {
             context.gc.fillRect(wall.getX(), wall.getY(), 10, 10);
         }
 
-        context.apple.setFill(Color.RED);
+        context.apple.setFill(Color.DARKRED);
         FieldData.getApple().clear();
         FieldData.addNewAppleToField();
 

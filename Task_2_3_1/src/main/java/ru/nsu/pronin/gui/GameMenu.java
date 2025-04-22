@@ -15,6 +15,7 @@ public class GameMenu {
 
         Text title = new Text("Snake Game");
         title.setFont(Font.font(36));
+        stage.setTitle("Menu");
 
         Button playBtn = new Button("Play");
         playBtn.setOnAction(e -> {

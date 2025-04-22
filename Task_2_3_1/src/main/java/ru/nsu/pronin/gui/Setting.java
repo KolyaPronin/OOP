@@ -20,11 +20,12 @@ public class Setting {
 
         Text title  = new Text("Game Setting");
         title.setFont(Font.font(20));
+        stage.setTitle("Settings");
 
         HBox topBar = new HBox();
         topBar.setAlignment(Pos.TOP_LEFT);
-        Button Back  = new Button("<-");
-        Back.setOnAction(e -> {
+        Button back  = new Button("⬅");
+        back.setOnAction(e -> {
             try {
                 GameMenu menu = new GameMenu();
                 Scene menuScene = menu.createMenu(stage, new GameField());
@@ -57,7 +58,7 @@ public class Setting {
         }));
 
 
-        topBar.getChildren().add(Back);
+        topBar.getChildren().add(back);
 
         settingBox.getChildren().addAll(title, topBar, speedTextField,
                 setSpeed,numberOfPointForVictory, setPointForVictory );
