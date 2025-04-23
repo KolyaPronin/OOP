@@ -8,8 +8,22 @@ import javafx.scene.text.Text;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+/**
+ * The GameMenu class represents the main menu of the Snake Game application.
+ * It provides options to start the game,
+ * navigate to the settings, or exit the application.
+ */
 public class GameMenu {
-    public Scene createMenu(Stage stage, GameField gameField) {
+
+    /**
+     * Creates and initializes the main menu scene for the Snake Game application.
+     * The menu contains options to start the game, navigate to settings, or exit the application.
+     *
+     * @param stage the primary stage for displaying the menu
+     * @param gameField the game field that represents the main game logic
+     * @return the Scene object representing the main menu
+     */
+    public Scene createMenu(final Stage stage, final GameField gameField) {
         VBox menuBox = new VBox(20);
         menuBox.setAlignment(Pos.CENTER);
 
