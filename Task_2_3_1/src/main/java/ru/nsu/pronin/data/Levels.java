@@ -124,7 +124,7 @@ public class Levels {
         SnakeData.setState(0);
         FieldData.setAbilityPassThroughWalls(true);
         GameField.getPause().setDuration(Duration.millis(40));
-        SnakeData.setNumberOfPointForVictory(25);
+        SnakeData.setNumberOfPointForVictory(5);
 
         for (int i = 0; i < 60; i++) {
             FieldData.getListWalls().add(new Point2D.Double(290, i * 10));
@@ -135,7 +135,7 @@ public class Levels {
     public static void classicLevel(){
         FieldData.getListWalls().clear();
         FieldData.setAbilityPassThroughWalls(true);
-        GameField.getPause().setDuration(Duration.millis(50));
+        SnakeData.setNumberOfPointForVictory(100);
 
         SnakeData.getSnakeList().clear();
         SnakeData.getSnakeList().add(new Point(100,100));

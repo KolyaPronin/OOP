@@ -1,6 +1,7 @@
 package ru.nsu.pronin.data;
 
 import java.awt.*;
+import javafx.scene.paint.Color;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,10 +10,11 @@ import java.util.Random;
 public class FieldData {
     private static final int sizeX = 600;
     private static final int sizeY = 600;
-    private static List<Point2D> walls = new ArrayList<Point2D>();
+    private static final List<Point2D> walls = new ArrayList<Point2D>();
     private static final List<Point> apple = new ArrayList<>(List.of(new Point(200, 100)));
     public static int numberOfLevel = 1;
     private static boolean abilityPassThroughWalls = false;
+    private static Color color = Color.GRAY;
 
     // Метод для инициализации стен
     public static void field() {
@@ -30,7 +32,6 @@ public class FieldData {
             Levels.classicLevel();
         }
     }
-
 
     public static void setLevel(int num){
         numberOfLevel = num;
@@ -91,4 +92,12 @@ public class FieldData {
     public static void setAbilityPassThroughWalls(boolean abilityPassThroughWalls) {
         FieldData.abilityPassThroughWalls = abilityPassThroughWalls;
     }
+
+//    public static void setColor(Color color){
+//        FieldData.color = color;
+//    }
+//
+//    public static Color getColor(){
+//        return getColor();
+//    }
 }
