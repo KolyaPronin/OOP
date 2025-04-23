@@ -3,6 +3,7 @@ package ru.nsu.pronin.gui;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -18,8 +19,11 @@ import javafx.animation.PauseTransition;
 import javafx.util.Duration;
 
 
+
 import java.awt.*;
 import java.awt.geom.Point2D;
+import javafx.scene.shape.Rectangle;
+
 
 public class GameField extends Application {
     private static Point2D lastTailPosition;
@@ -57,6 +61,13 @@ public class GameField extends Application {
         Group root = new Group();
         root.getChildren().add(canvas);
 
+        Text scoreText = new Text();
+        scoreText.setFont(Font.font(15));
+        scoreText.setFill(Color.WHITE);
+        scoreText.setX(10); // положение по X
+        scoreText.setY(20); // положение по Y
+        root.getChildren().add(scoreText);
+
 
         //PauseTransition pause = new PauseTransition(Duration.millis(50));
 
@@ -73,7 +84,7 @@ public class GameField extends Application {
         SnakeService service = new SnakeService();
         SnakeController controller = new SnakeController();
         FieldService fieldService = new FieldService();
-        GameContext context = new GameContext(gc, canvas, pause, root, snake, apple,stage);
+        GameContext context = new GameContext(gc, canvas, pause, root, snake, apple,stage, scoreText);
 
 
         pause.setOnFinished(e -> {
@@ -85,8 +96,13 @@ public class GameField extends Application {
             service.move();
             boolean gameOver = fieldService.borderChecker(pause);
 
+            scoreText.setText("Score: " + (SnakeData.getSnakeList().size() - 1) + " / " + SnakeData.getNumberOfPointForVictory());
 
             if (gameOver) {
+                Rectangle dim = new Rectangle(FieldData.getSizeX(), FieldData.getSizeY());
+                dim.setFill(Color.rgb(0, 0, 0, 0.5)); 
+                root.getChildren().add(dim);
+
                 Text gameOverText = new Text("GAME OVER");
                 gameOverText.setFont(Font.font(70));
                 gameOverText.setFill(Color.RED);
@@ -101,6 +117,26 @@ public class GameField extends Application {
             }
 
             if(SnakeData.getSnakeList().size() == SnakeData.getNumberOfPointForVictory() + 1){
+                Rectangle dim = new Rectangle(FieldData.getSizeX(), FieldData.getSizeY());
+                dim.setFill(Color.rgb(0, 0, 0, 0.5));
+                root.getChildren().add(dim);
+
+                Button nextLevelBtn = new Button("Next Level");
+
+                double btnWidth = 100;
+                double btnHeight = 30;
+
+                nextLevelBtn.setLayoutX(FieldData.getSizeX() / 2 - btnWidth / 2);
+                nextLevelBtn.setLayoutY(FieldData.getSizeY() / 2 + 50);
+                nextLevelBtn.setOnAction(event -> {
+                    FieldData.setLevel(FieldData.getNumberOfLevel() + 1);
+                    try {
+                        startGame(stage);
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
+                });
+
                 Text youWinText = new Text("You Win");
                 youWinText.setFont(Font.font(70));
                 youWinText.setFill(Color.RED);
@@ -108,6 +144,8 @@ public class GameField extends Application {
                 youWinText.setY(FieldData.getSizeY()/2);
 
                 root.getChildren().add(youWinText);
+                root.getChildren().add(nextLevelBtn);
+                pause.stop();
 
                 return;
             }
@@ -126,6 +164,9 @@ public class GameField extends Application {
             for(int i = 0; i < SnakeData.getSnakeList().size(); i++) {
                 snake.fillRect(SnakeData.getSnakeList().get(i).getX(), SnakeData.getSnakeList().get(i).getY(), 10, 10);
             }
+
+
+            scoreText.setText("Score: " + (SnakeData.getSnakeList().size() - 1) + " / " + SnakeData.getNumberOfPointForVictory());
 
             pause.playFromStart();
         });
@@ -152,7 +193,8 @@ public class GameField extends Application {
 
         context.gc.setFill(Color.GRAY);
         context.gc.fillRect(0,0,context.canvas.getWidth(), context.canvas.getHeight());
-        context.root.getChildren().removeIf(node -> node instanceof Text);
+        context.root.getChildren().removeIf(node ->
+                (node instanceof Text && node != context.scoreText) || node instanceof Rectangle);
 
         context.gc.setFill(Color.BLACK);
 

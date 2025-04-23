@@ -11,28 +11,33 @@ public class FieldData {
     private static final int sizeY = 600;
     private static List<Point2D> walls = new ArrayList<Point2D>();
     private static final List<Point> apple = new ArrayList<>(List.of(new Point(200, 100)));
+    public static int numberOfLevel = 1;
+    private static boolean abilityPassThroughWalls = false;
+
     // Метод для инициализации стен
     public static void field() {
-        for (int i = 1; i < 5; i++) {
-            walls.add(new Point2D.Double(10 * i, 20));
-            walls.add(new Point2D.Double(50,60 + i * 10));
-            walls.add(new Point2D.Double(220,150 + i * 10));
-            walls.add(new Point2D.Double(450,450 + i * 10));
-            walls.add(new Point2D.Double(450 + ((i / 2) * 10),450));
-            walls.add(new Point2D.Double(520 + ((i / 2) * 10),120));
-            walls.add(new Point2D.Double(520,120 - i * 10));
-            walls.add(new Point2D.Double(10 * i ,450));
-            walls.add(new Point2D.Double(300 + i * 10 ,550));
-            // Потом добавить еще стен
-            // начало координат левый верхний угол.
-            // Чтобы сдвинуть по x (влево) в пределах экрана 600*600
-            // надо ввести (x < 600) + (1 < i < 5) * 10(квадрат клетки).
-            // Чтобы сдвинуть по y( вверх или вниз) в пределах экрана 600*600
-            // надо ввести (y < 600) + (1 < i < 5) * 10(квадрат клетки)
-            // 600*600 == правому нижнему углу экрана.
-            // Чтобы укоротить длину препятствия, следует применить к i целочисленное деление, без дробей.
+        if(numberOfLevel == 1) {
+             Levels.levelOne();
+         } else if(numberOfLevel == 2) {
+             Levels.levelTwo();
+         } else if(numberOfLevel == 3) {
+             Levels.levelThree();
+         } else if(numberOfLevel == 4) {
+             Levels.levelFour();
+         } else if(numberOfLevel == 5) {
+             Levels.levelFive();
+         } else if (numberOfLevel == 6) {
+            Levels.classicLevel();
         }
+    }
 
+
+    public static void setLevel(int num){
+        numberOfLevel = num;
+    }
+
+    public static int getNumberOfLevel() {
+        return numberOfLevel;
     }
 
     public static int getSizeX() {
@@ -70,7 +75,6 @@ public class FieldData {
         apple.add(newApple);
     }
 
-
     public static Point generateNewApple(){
         return new Point(new Random().nextInt(60) * 10, new Random().nextInt(60) * 10);
 
@@ -78,5 +82,13 @@ public class FieldData {
 
     public static void removeApple(){
         apple.remove(0);
+    }
+
+    public static boolean isAbilityPassThroughWalls() {
+        return abilityPassThroughWalls;
+    }
+
+    public static void setAbilityPassThroughWalls(boolean abilityPassThroughWalls) {
+        FieldData.abilityPassThroughWalls = abilityPassThroughWalls;
     }
 }
