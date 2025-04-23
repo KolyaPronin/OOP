@@ -62,6 +62,33 @@ public class SnakeController {
                 }
                 break;
         }
+
+        switch (code) {
+            case W:
+                if (currentState != 3) {
+                    SnakeData.setState(1);
+                    SnakeData.setDirectionChangedThisTick(true);
+                }
+                break;
+            case S:
+                if (currentState != 1) {
+                    SnakeData.setState(3);
+                    SnakeData.setDirectionChangedThisTick(true);
+                }
+                break;
+            case A:
+                if (currentState != 0) {
+                    SnakeData.setState(2);
+                    SnakeData.setDirectionChangedThisTick(true);
+                }
+                break;
+            case D:
+                if (currentState != 2) {
+                    SnakeData.setState(0);
+                    SnakeData.setDirectionChangedThisTick(true);
+                }
+                break;
+        }
     }
 
 }

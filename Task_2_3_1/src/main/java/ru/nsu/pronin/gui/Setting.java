@@ -80,17 +80,27 @@ public class Setting {
         RadioButton classicLevel = new RadioButton("Classic");
         classicLevel.setToggleGroup(levelGroup);
 
-// Обработчик выбора уровня
+        CheckBox abilityPassThroughWalls = new CheckBox("abilityPassThroughTheWalls");
+        abilityPassThroughWalls.setOnAction(event -> {
+            FieldData.setAbilityPassThroughWalls(abilityPassThroughWalls.isSelected());
+        });
+        abilityPassThroughWalls.setSelected(FieldData.isAbilityPassThroughWalls());
+
+        level1.setUserData(1);
+        level2.setUserData(2);
+        level3.setUserData(3);
+        level4.setUserData(4);
+        level5.setUserData(5);
+        classicLevel.setUserData(6);
+
         levelGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
-                RadioButton selectedButton = (RadioButton) newValue;
-                String selectedLevelText = selectedButton.getText();
-                int selectedLevel = Integer.parseInt(selectedLevelText.split(" ")[1]); // Извлекается номер уровня
+                int selectedLevel = (int) ((RadioButton) newValue).getUserData();
                 FieldData.setLevel(selectedLevel);
             }
         });
 
-// Инициализация выбранного уровня
+
         switch (FieldData.numberOfLevel) {
             case 1:
                 level1.setSelected(true);
@@ -112,7 +122,7 @@ public class Setting {
                 break;
         }
 
-        VBox levelBox = new VBox(10, level1, level2, level3, level4, level5, classicLevel);
+        VBox levelBox = new VBox(10, level1, level2, level3, level4, level5, classicLevel, abilityPassThroughWalls);
         levelBox.setAlignment(Pos.CENTER);
         topBar.getChildren().add(back);
         settingBox.getChildren().addAll(title, topBar, speedTextField,
