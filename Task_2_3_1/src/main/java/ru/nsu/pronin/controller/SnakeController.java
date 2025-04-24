@@ -101,35 +101,6 @@ public class SnakeController {
             default:
                 throw new IllegalStateException("Unexpected value: " + code);
         }
-
-        switch (code) {
-            case W:
-                if (currentState != STATE_DOWN) {
-                    SnakeData.setState(STATE_UP);
-                    SnakeData.setDirectionChangedThisTick(true);
-                }
-                break;
-            case S:
-                if (currentState != STATE_UP) {
-                    SnakeData.setState(STATE_DOWN);
-                    SnakeData.setDirectionChangedThisTick(true);
-                }
-                break;
-            case A:
-                if (currentState != STATE_RIGHT) {
-                    SnakeData.setState(STATE_LEFT);
-                    SnakeData.setDirectionChangedThisTick(true);
-                }
-                break;
-            case D:
-                if (currentState != STATE_LEFT) {
-                    SnakeData.setState(STATE_RIGHT);
-                    SnakeData.setDirectionChangedThisTick(true);
-                }
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + code);
-        }
     }
 
 }
