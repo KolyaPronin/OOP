@@ -7,6 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.text.Text;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import ru.nsu.pronin.data.SoundPlayer;
 
 /**
  * The GameMenu class represents the main menu of the Snake Game application.
@@ -24,6 +25,7 @@ public class GameMenu {
      * @return the Scene object representing the main menu
      */
     public Scene createMenu(final Stage stage, final GameField gameField) {
+        SoundPlayer.playBackgroundMusic();
         VBox menuBox = new VBox(20);
         menuBox.setAlignment(Pos.CENTER);
 
