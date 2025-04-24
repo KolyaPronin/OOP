@@ -195,7 +195,7 @@ public class GameField extends Application {
 
                 Text youWinText = new Text("You Win");
                 youWinText.setFont(Font.font(70));
-                youWinText.setFill(Color.RED);
+                youWinText.setFill(Color.GREENYELLOW);
                 youWinText.setX(FieldData.getSizeX() / 2
                         - youWinText.getLayoutBounds().getWidth() / 2);
                 youWinText.setY(FieldData.getSizeY() / 2);
