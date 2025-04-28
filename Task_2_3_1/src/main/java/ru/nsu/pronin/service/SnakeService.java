@@ -38,49 +38,35 @@ public class SnakeService {
         if (SnakeData.getState() == 0) {
             Point head = SnakeData.getSnakeList().getFirst();
             head = new Point(head.x + 10, head.y);
-            SnakeData.getSnakeList().addFirst(head);
-
-            SnakeData.deletePointFromList();
-            for (int i = 0; i < FieldData.getApple().size(); i++) {
-                if (SnakeData.getSnakeList().getFirst().
-                        equals(FieldData.getApple().get(i))) {
-                    eatingFood();
-                }
-            }
+            logicOfBodyIncrease(head);
 
             //System.out.println( SnakeData.getSnakeList().size());
         } else if (SnakeData.getState() == 1) { // движение сверху вниз
             Point head = SnakeData.getSnakeList().getFirst();
             head = new Point(head.x, head.y - 10);
-            SnakeData.getSnakeList().addFirst(head);
-            SnakeData.deletePointFromList();
-            for (int i = 0; i < FieldData.getApple().size(); i++) {
-                if (SnakeData.getSnakeList().getFirst().
-                        equals(FieldData.getApple().get(i))) {
-                    eatingFood();
-                }
-            }
+            logicOfBodyIncrease(head);
         } else if (SnakeData.getState() == 2) {
             Point head = SnakeData.getSnakeList().getFirst();
             head = new Point(head.x - 10, head.y);
-            SnakeData.getSnakeList().addFirst(head);
-            SnakeData.deletePointFromList();
-            for (int i = 0; i < FieldData.getApple().size(); i++) {
-                if (SnakeData.getSnakeList().getFirst().
-                        equals(FieldData.getApple().get(i))) {
-                    eatingFood();
-                }
-            }
+            logicOfBodyIncrease(head);
         } else if (SnakeData.getState() == 3) {
             Point head = SnakeData.getSnakeList().getFirst();
             head = new Point(head.x, head.y + 10);
-            SnakeData.getSnakeList().addFirst(head);
-            SnakeData.deletePointFromList();
-            for (int i = 0; i < FieldData.getApple().size(); i++) {
-                if (SnakeData.getSnakeList().getFirst().
-                        equals(FieldData.getApple().get(i))) {
-                    eatingFood();
-                }
+            logicOfBodyIncrease(head);
+        }
+    }
+
+    /**
+     * The logic of the body of the snake.
+     * @param head
+     */
+    private void logicOfBodyIncrease(final Point head) {
+        SnakeData.getSnakeList().addFirst(head);
+        SnakeData.deletePointFromList();
+        for (int i = 0; i < FieldData.getApple().size(); i++) {
+            if (SnakeData.getSnakeList().getFirst().
+                    equals(FieldData.getApple().get(i))) {
+                eatingFood();
             }
         }
     }

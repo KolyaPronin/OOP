@@ -21,10 +21,10 @@ public class FieldService {
      *
      * @param pause the game pause transition object,
      *             used to pause the game in case of collisions
-     * @return {@code true} if a collision or boundary
-     * condition is detected, {@code false} otherwise
+     * @return {@code false} if a collision or boundary
+     * condition is detected, {@code true} otherwise
      */
-    public boolean borderChecker(final PauseTransition pause) {
+    public boolean checkBorder(final PauseTransition pause) {
         int  headX = SnakeData.getSnakeList().getFirst().x;
         int  headY = SnakeData.getSnakeList().getFirst().y;
 
@@ -65,3 +65,4 @@ public class FieldService {
         return false;
     }
 }
+

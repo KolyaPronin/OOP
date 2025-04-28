@@ -143,7 +143,7 @@ public class GameField extends Application {
 
             SnakeData.setDirectionChangedThisTick(false);
             service.move();
-            boolean gameOver = fieldService.borderChecker(pause);
+            boolean gameOver = fieldService.checkBorder(pause);
 
             scoreText.setText("Score: " + (SnakeData.getSnakeList().size() - 1)
                     + " / " + SnakeData.getNumberOfPointForVictory());
