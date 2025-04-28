@@ -16,14 +16,14 @@ public class SnakeData {
     /**
      * The starting point of the snake's head.
      */
-    private static final List<Point> HEAD_DEFAULT_POSITION
-            = Arrays.asList(new Point(100, 100));
+    private static final List<Point> HEAD_DEFAULT_POSITION =
+            List.of(new Point(100, 100));
 
     /**
      * List of points representing the snake's body (starts from the head).
      */
-    private static final List<Point> snakeList
-            = new ArrayList<Point>(HEAD_DEFAULT_POSITION);
+    private static final List<Point> snakeList =
+            new ArrayList<Point>(HEAD_DEFAULT_POSITION);
 
     /**
      * Current state of the snake's direction:
@@ -63,7 +63,7 @@ public class SnakeData {
      * by removing the tail after adding a new head.
      */
     public static void deletePointFromList() {
-        snakeList.remove(snakeList.size() - 1);
+        snakeList.removeLast();
     }
 
     /**

@@ -8,6 +8,8 @@ import ru.nsu.pronin.gui.GameContext;
 import ru.nsu.pronin.gui.GameField;
 import ru.nsu.pronin.gui.GameMenu;
 
+import static ru.nsu.pronin.data.KeyState.*;
+
 /**
  * The SnakeController class is responsible
  * for handling user input during the game,
@@ -16,25 +18,6 @@ import ru.nsu.pronin.gui.GameMenu;
  * changing the snake's direction while ensuring game logic consistency.
  */
 public class SnakeController {
-    /**
-     * The state for moving upwards.
-     */
-    private static final int STATE_UP = 1;
-
-    /**
-     * The state for moving downwards.
-     */
-    private static final int STATE_DOWN = 3;
-
-    /**
-     * The state for moving to the left.
-     */
-    private static final int STATE_LEFT = 2;
-
-    /**
-     * The state for moving to the right.
-     */
-    private static final int STATE_RIGHT = 0;
 
     /**
      * Handles the key input during the game,
@@ -88,7 +71,7 @@ public class SnakeController {
                 break;
             case LEFT:
                 if (currentState != STATE_RIGHT) {
-                    SnakeData.setState(2);
+                    SnakeData.setState(STATE_LEFT);
                     SnakeData.setDirectionChangedThisTick(true);
                 }
                 break;
