@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+    id 'application'
+}
+
+group = 'ru.nsu.pronin'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation fileTree(dir: 'C:/javafx-sdk-21.0.6/lib', include: ['*.jar'])
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+javafx {
+    version = "21"
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.media']
+}
+
+application {
+    mainClass = 'ru.nsu.pronin.gui.GameField'
+}
+
+run {
+    jvmArgs = [
+            '--module-path', 'C:/javafx-sdk-21.0.6/lib',
+            '--add-modules', 'javafx.controls,javafx.fxml,javafx.media'
+    ]
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
+}
