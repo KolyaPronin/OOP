@@ -45,7 +45,7 @@ public class GameContext {
     /**
      * Constructs a new GameContext object.
      * This class serves as a container for various components and objects
-     * required to manage the game state, graphical rendering, and interactions.
+     * required to manage the game state, graphical rendering and interactions.
      *
      * @param paramGc        The GraphicsContext for rendering game graphics.
      * @param paramCanvas    The Canvas on which the game is drawn.
