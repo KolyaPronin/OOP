@@ -4,43 +4,43 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.NoSuchElementException;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit tests for the {@link HashTable} class.
  */
 class HashTableTest {
-
-    HashTable<Integer, String> table;
+    private HashTable<String, Number> hashTable;
 
     /**
      * Initializes a new hash table before each test.
      */
     @BeforeEach
-    void before() {
-        table = new HashTable<>();
+    void setUp() {
+        hashTable = new HashTable<>();
     }
 
     /**
      * Tests basic put and get functionality.
      */
     @Test
-    void putOneKeyOneValue() {
-        table.put(1, "one");
-        assertTrue(table.containsKey(1));
+    void testPutAndGet() {
+        hashTable.put("one", 1);
+        assertEquals(1, hashTable.get("one"));
     }
 
     /**
      * Tests updating an existing key.
      */
     @Test
-    void putOneKeyTwoValue() {
-        table.put(1, "one");
-
-        assertTrue(table.containsKey(1));
-        String prev = table.put(1, "one one");
-        assertTrue(table.containsValue("one one"));
-        assertEquals(prev, "one");
-        assertFalse(table.containsValue("one"));
+    void testUpdate() {
+        hashTable.put("pi", 3);
+        hashTable.update("pi", 3.14);
+        assertEquals(3.14, hashTable.get("pi"));
     }
 
     /**
@@ -55,54 +55,45 @@ class HashTableTest {
      * Tests removing an entry by key.
      */
     @Test
-    void testEqualsSame() {
-        table.put(1, "one");
-        table.put(11, "two");
-        table.put(2, "three");
-        assertTrue(table.equals(table));
+    void testRemove() {
+        hashTable.put("a", 10);
+        hashTable.remove("a");
+        assertNull(hashTable.get("a"));
     }
 
     /**
      * Tests the containsKey method.
      */
     @Test
-    void testEqualsNull() {
-        table.put(1, "one");
-        table.put(11, "two");
-        table.put(2, "three");
-        HashTable<Integer, String> compared = null;
-        assertFalse(table.equals(compared));
+    void testContainsKey() {
+        hashTable.put("x", 100);
+        assertTrue(hashTable.containsKey("x"));
+        assertFalse(hashTable.containsKey("y"));
     }
 
     /**
      * Tests equality of two hash tables with the same content.
      */
     @Test
-    void testEqualsDiffTrue() {
-        table.put(1, "one");
-        table.put(11, "two");
-        table.put(2, "three");
-        HashTable<Integer, String> compared = new HashTable<>();
-        compared.put(1, "one");
-        compared.put(11, "two");
-        compared.put(2, "three");
+    void testEquals() {
+        HashTable<String, Number> table1 = new HashTable<>();
+        HashTable<String, Number> table2 = new HashTable<>();
 
-        assertTrue(table.equals(compared));
+        table1.put("one", 1);
+        table2.put("one", 1);
+
+        assertEquals(table1, table2);
     }
 
     /**
      * Tests inequality of two hash tables with different values.
      */
     @Test
-    void testEqualsDiffFalse() {
-        table.put(1, "one");
-        table.put(11, "two");
-        table.put(2, "three");
-        HashTable<Integer, String> compared = new HashTable<>();
-        compared.put(1, "one");
-        compared.put(11, "two");
-
-        assertFalse(table.equals(compared));
+    void testNotEquals() {
+        hashTable.put("one", 1);
+        HashTable<String, Number> other = new HashTable<>();
+        other.put("one", 2);
+        assertNotEquals(hashTable, other);
     }
 
     /**

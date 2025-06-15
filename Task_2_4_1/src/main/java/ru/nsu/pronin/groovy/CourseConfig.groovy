@@ -18,7 +18,7 @@ course.course {
 
     // === GROUP AND STUDENT ===
     group(name: '22105') {
-        student(username: 'KIRILL', fullName: 'Kirill Kozlov', repo: 'https://github.com/kozlovwv/OOP.git')
+        student(username: 'KOLYA', fullName: 'Kolya Pronin', repo: 'https://github.com/KolyaPronin/OOP.git')
     }
 
     // === TASK ASSIGNMENTS ===

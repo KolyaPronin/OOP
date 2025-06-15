@@ -1,18 +1,6 @@
 package ru.nsu.pronin;
 
 import java.util.*;
-/**
- * Реализация хэш таблицы.
- *
- * @param <K> - Тип ключей.
- * @param <V> - Тип значений.
- */
-public class HashTable<K, V> implements Iterable<OneNode<K, V>> {
-    private ArrayList<OneNode<K, V>> ourTable;
-    private int tableSize;
-    private int nodeSize;
-    private int modCount;
-
 
 /**
  * A simple implementation of a hash table that supports constant-time access by key.
@@ -33,22 +21,13 @@ public class HashTable<K, V> implements Iterable<Map.Entry<K, V>> {
      * Creates an empty hash table.
      */
     public HashTable() {
-        ourTable = new ArrayList<>(10);
-        tableSize = 10;
-        nodeSize = 0;
-        modCount = 0;
-        for (int i = 0; i < tableSize; i++) {
-            ourTable.add(null);
-        }
+        this.capacity = INITIAL_CAPACITY;
+        this.table = new LinkedList[capacity];
+        this.size = 0;
     }
 
-    /**
-     * Количество элементов в хэш таблице.
-     *
-     * @return - количество элементов.
-     */
-    public int size() {
-        return nodeSize;
+    private int index(K key) {
+        return Math.abs(key.hashCode()) % capacity;
     }
 
     /**
@@ -69,7 +48,14 @@ public class HashTable<K, V> implements Iterable<Map.Entry<K, V>> {
                 return;
             }
         }
+
+        table[idx].add(new Entry<>(key, value));
+        size++;
         modCount++;
+
+        if ((float) size / capacity >= LOAD_FACTOR) {
+            resize();
+        }
     }
 
     /**
@@ -86,95 +72,6 @@ public class HashTable<K, V> implements Iterable<Map.Entry<K, V>> {
                     return entry.value;
                 }
             }
-        }
-        return false;
-    }
-
-    /**
-     * Ассоциирует новое значение V с ключом K.
-     * Либо обновляет значение на новое.
-     *
-     * @param ourKey   - наш ключ.
-     * @param newValue - новое значение.
-     * @return возвращает предыдущее значение, если его нет то null.
-     */
-    public V put(K ourKey, V newValue) {
-        int hash = ourKey.hashCode() % tableSize;
-        V oldValue = null;
-
-        OneNode<K, V> node = ourTable.get(hash);
-        for (; node != null; node = node.getNext()) {
-            if (node.getKey() == ourKey) {
-                oldValue = node.getValue();
-                node.setValue(newValue);
-                return oldValue;
-            }
-        }
-
-        node = new OneNode<>(ourKey, newValue);
-        node.setNext(ourTable.get(hash));
-        ourTable.set(hash, node);
-        nodeSize++;
-        modCount++;
-
-        double loadFactor = (double) nodeSize / (double) tableSize;
-        if (loadFactor >= 0.7) {
-            resolveLoadFactor();
-        }
-        return oldValue;
-    }
-
-    /**
-     * Удалят элемент по ключу в хэш таблице.
-     *
-     * @param key - ключ, который ищем.
-     * @return - предыдущее значение по ключу.
-     */
-    public V remove(K key) {
-        if (!containsKey(key)) {
-            throw new IllegalArgumentException("Нет значения с таким ключом");
-        }
-        int hash = key.hashCode() % tableSize;
-        OneNode<K, V> node = ourTable.get(hash);
-        OneNode<K, V> prev = null;
-        V prevValue = null;
-        while (node != null) {
-            if (node.getKey() == key) {
-                prevValue = node.getValue();
-                if (prev != null) {
-                    prev.setNext(node.getNext());
-
-                } else {
-                    ourTable.set(hash, node.getNext());
-                }
-                nodeSize--;
-                modCount++;
-                break;
-            }
-            prev = node;
-            node = node.getNext();
-        }
-
-        return prevValue;
-    }
-
-    /**
-     * Выводит значение по ключу.
-     *
-     * @param key - ключ по, которому ищем.
-     * @return значение.
-     */
-    public V get(K key) {
-        if (!containsKey(key)) {
-            throw new IllegalArgumentException("Нет значения с таким ключом");
-        }
-        int hash = key.hashCode() % tableSize;
-        OneNode<K, V> node = ourTable.get(hash);
-        while (node != null) {
-            if (node.getKey() == key) {
-                return node.getValue();
-            }
-            node = node.getNext();
         }
         return null;
     }
@@ -253,7 +150,6 @@ public class HashTable<K, V> implements Iterable<Map.Entry<K, V>> {
                 }
             }
         }
-        return set;
     }
 
     /**
@@ -292,7 +188,6 @@ public class HashTable<K, V> implements Iterable<Map.Entry<K, V>> {
                 }
                 return bucketIterator.next();
             }
-
         };
     }
 
@@ -338,7 +233,7 @@ public class HashTable<K, V> implements Iterable<Map.Entry<K, V>> {
                 sb.append(", ");
             }
         }
-        return str.toString();
+        return sb.append("}").toString();
     }
 
     /**
