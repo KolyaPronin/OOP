@@ -13,10 +13,7 @@ public class HashTable<K, V> implements Iterable<OneNode<K, V>> {
     private int nodeSize;
     private int modCount;
 
-<<<<<<< HEAD
-    /**
-     * Конструктор.
-=======
+
 /**
  * A simple implementation of a hash table that supports constant-time access by key.
  *
@@ -34,7 +31,6 @@ public class HashTable<K, V> implements Iterable<Map.Entry<K, V>> {
 
     /**
      * Creates an empty hash table.
->>>>>>> 47aa2b7 (Task_1_2_2)
      */
     public HashTable() {
         ourTable = new ArrayList<>(10);
@@ -56,24 +52,6 @@ public class HashTable<K, V> implements Iterable<Map.Entry<K, V>> {
     }
 
     /**
-<<<<<<< HEAD
-     * Решает проблемы с коллизией.
-     */
-    private void resolveLoadFactor() {
-        tableSize = tableSize * 2;
-        ArrayList<OneNode<K, V>> oldOurTable = ourTable;
-        ourTable = new ArrayList<>(tableSize * 2);
-        for (int i = 0; i < tableSize; i++) {
-            ourTable.add(null);
-        }
-        for (OneNode<K, V> node : oldOurTable) {
-            while (node != null) {
-                int hash = node.getKey().hashCode() % tableSize;
-                var newNode = new OneNode<>(node.getKey(), node.getValue());
-                newNode.setNext(ourTable.get(hash));
-                ourTable.set(hash, newNode);
-                node = node.getNext();
-=======
      * Inserts a key-value pair into the table. Replaces value if key exists.
      *
      * @param key   the key
@@ -89,43 +67,12 @@ public class HashTable<K, V> implements Iterable<Map.Entry<K, V>> {
             if (entry.key.equals(key)) {
                 entry.value = value;
                 return;
->>>>>>> 47aa2b7 (Task_1_2_2)
             }
         }
         modCount++;
     }
 
     /**
-<<<<<<< HEAD
-     * Смотрит, содержит ли хэш таблица данный ключ.
-     *
-     * @param key - ключ, который смотрим.
-     * @return - true если содержит, иначе false.
-     */
-    public boolean containsKey(K key) {
-        int hash = key.hashCode() % tableSize;
-        OneNode<K, V> node = ourTable.get(hash);
-        while (node != null) {
-            if (node.getKey() == key) {
-                return true;
-            }
-            node = node.getNext();
-        }
-        return false;
-    }
-
-    /**
-     * Содержит ли какой-нибудь ключ заданное значение.
-     *
-     * @param value - значение, по которому смотрим.
-     * @return - true если содержит, иначе false.
-     */
-    public boolean containsValue(V value) {
-        for (var node : ourTable) {
-            for (; node != null; node = node.getNext()) {
-                if (node.getValue() == value) {
-                    return true;
-=======
      * Returns the value associated with the key, or null if not found.
      *
      * @param key the key
@@ -137,7 +84,6 @@ public class HashTable<K, V> implements Iterable<Map.Entry<K, V>> {
             for (Entry<K, V> entry : table[idx]) {
                 if (entry.key.equals(key)) {
                     return entry.value;
->>>>>>> 47aa2b7 (Task_1_2_2)
                 }
             }
         }
@@ -234,16 +180,6 @@ public class HashTable<K, V> implements Iterable<Map.Entry<K, V>> {
     }
 
     /**
-<<<<<<< HEAD
-     * Возвращает set все пар ключ = значение.
-     *
-     * @return set.
-     */
-    Set<OneNode<K, V>> oneNodeSet() {
-        Set<OneNode<K, V>> set = new HashSet<>();
-        for (var node : this) {
-            set.add(node);
-=======
      * Updates the value for an existing key.
      *
      * @param key   the key
@@ -316,44 +252,11 @@ public class HashTable<K, V> implements Iterable<Map.Entry<K, V>> {
                     put(entry.key, entry.value);
                 }
             }
->>>>>>> 47aa2b7 (Task_1_2_2)
         }
         return set;
     }
 
     /**
-<<<<<<< HEAD
-     * Создает итератор.
-     *
-     * @return итератор.
-     */
-    @Override
-    public Iterator<OneNode<K, V>> iterator() {
-        return new Iterator<OneNode<K, V>>() {
-            private int iterModCount = modCount;
-            private int indexList = 0;
-            private OneNode<K, V> cur = null;
-
-            @Override
-            public boolean hasNext() {
-                if (iterModCount != modCount) {
-                    throw new ConcurrentModificationException("Было произведено изменение");
-                }
-                while (cur == null && indexList < tableSize) {
-                    cur = ourTable.get(indexList++);
-                }
-                return cur != null;
-            }
-
-            @Override
-            public OneNode<K, V> next() {
-                if (!hasNext()) {
-                    throw new NoSuchElementException("Нет больше элементов");
-                }
-                OneNode<K, V> nodeToReturn = cur;
-                cur = cur.getNext();
-                return nodeToReturn;
-=======
      * Returns an iterator over the table entries.
      * Throws ConcurrentModificationException if modified during iteration.
      *
@@ -388,30 +291,12 @@ public class HashTable<K, V> implements Iterable<Map.Entry<K, V>> {
                     throw new NoSuchElementException();
                 }
                 return bucketIterator.next();
->>>>>>> 47aa2b7 (Task_1_2_2)
             }
 
         };
     }
 
     /**
-<<<<<<< HEAD
-     * Переводит хэш таблицу в строку.
-     *
-     * @return - строку.
-     */
-    @Override
-    public String toString() {
-        StringBuilder str = new StringBuilder();
-        int counter = 0;
-        for (var node : this) {
-            if (counter > 0) {
-                str.append("\n");
-            }
-            str.append(node.toString());
-            counter++;
-
-=======
      * Checks equality with another hash table.
      *
      * @param o the object to compare
@@ -452,30 +337,11 @@ public class HashTable<K, V> implements Iterable<Map.Entry<K, V>> {
             if (it.hasNext()) {
                 sb.append(", ");
             }
->>>>>>> 47aa2b7 (Task_1_2_2)
         }
         return str.toString();
     }
 
     /**
-<<<<<<< HEAD
-     * Сравнивает две хэш таблицы.
-     *
-     * @param o - объект, с которым сравниваем.
-     * @return - true если равны, иначе false.
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        return this.ourTable.equals(((HashTable<?, ?>) o).ourTable);
-    }
-}
-=======
      * Entry holds a key-value pair.
      *
      * @param <K> key type
@@ -519,4 +385,3 @@ public class HashTable<K, V> implements Iterable<Map.Entry<K, V>> {
         System.out.println(hashTable.get("one")); // 1.0
     }
 }
->>>>>>> 47aa2b7 (Task_1_2_2)
